@@ -1,6 +1,6 @@
  
 
-
+import "bootstrap"
 
  function Navigate1 () {
 return(

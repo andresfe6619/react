@@ -1,10 +1,14 @@
 import logo from './logo.svg';
+
 import './Styles/App.scss';
-import Navigate1 from "./Components/NavBar2"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navigate1 from "./Components/NavBar2";
+
 function App() {
   return (
     <div className="App ">   
-      <header className="App-header">
+
+      <header >
       < Navigate1/>
         <img src={logo} className="App-logo" alt="logo" />
         <p>

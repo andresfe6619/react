@@ -29,11 +29,11 @@ box-sizing: border-box;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+
 
 .App-header {
   background-color: #282c34;
@@ -209,7 +209,7 @@ body{
 
 
   header{ 
- background-image: url(./imagenes/1234.jpg) !important;
+ background-image: url( App.scss) !important;
 
 }
  
