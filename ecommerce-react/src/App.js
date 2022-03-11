@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './Styles/App.scss';
-import Bar from "./Components/NavBar"
 import Navigate1 from "./Components/NavBar2"
 function App() {
   return (
