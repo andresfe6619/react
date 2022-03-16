@@ -1,4 +1,4 @@
- 
+import CartWidget from "./CartWidget/CartWidgetShopping";
 
 import "bootstrap"
 
@@ -38,6 +38,7 @@ return(
 
             </ul>
           </li>
+          <CartWidget></CartWidget>
         </ul>
         <form>
          <input type="text" name="Busqueda" placeholder="encuentra productos" className="letraNormal"/>

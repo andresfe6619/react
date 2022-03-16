@@ -58,7 +58,13 @@ box-sizing: border-box;
     transform: rotate(360deg);
   }
 }
-
+.Productos{
+color: white;
+background-color:black;
+border: outset;
+border-radius: 10px;
+display: inline-block
+}
 
 .listaNormal{
 
@@ -109,7 +115,7 @@ button{
 
 background: black;
 color: white;
-
+border-radius: 10px
  }
 
 .fondoNegro{
