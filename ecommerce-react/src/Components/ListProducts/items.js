@@ -19,7 +19,7 @@ import React,{useState, useEffect} from 'react'
         imagen: "https://http2.mlstatic.com/D_NQ_NP_731041-MCO49263114455_032022-O.webp",
         price: 10,
         quantity : "2lb",
-        scoop: "44 gr de proteina y 3000mg de creatina",
+        scoop: "44 gr de p y 3000mg de cr",
         id: 2,
         Stock: 10
     },

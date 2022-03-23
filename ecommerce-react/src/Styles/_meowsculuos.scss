@@ -63,7 +63,8 @@ color: white;
 background-color:black;
 border: outset;
 border-radius: 10px;
-display: inline-block
+display: inline-block !important;
+margin: 0px !important;
 }
 .Comprar{
   
@@ -181,7 +182,7 @@ legend {
 
 
 div {
-
+display: inline-block;
 	color: white;
 }
 

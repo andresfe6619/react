@@ -18,7 +18,7 @@ function App() {
       </ListProducts> 
       
        <h2 className="blancoNegro">Creatinas</h2>
-      <Creatins1>
+      <Creatins1 className="Productos">
       </Creatins1>
 
         <img src={logo} className="App-logo" alt="logo" />

@@ -1,6 +1,6 @@
 import React from "react"; 
 import ProductsList from "./Products"
-
+import  Creatins1 from "./itemList"
 
 
 const ListProducts = ({children}) => {
@@ -13,6 +13,8 @@ const ListProducts = ({children}) => {
             <ProductsList  title='SM4RT G4INER' imagen = "https://cdnx.jumpseller.com/mis-vitaminas/image/11152503/resize/1800/1800?1645636636"  quantity="1kg" scoop='44gr de proteina' Stock={10} initial={1} price={150}/>
             <ProductsList  title='BiPro      ' imagen ="https://prodalia.com.co/93458-thickbox_default/bipro-6-libras.jpg "quantity='6lb' scoop='36gr de proteina' Stock={5}  initial={2} price={123}/>
             <ProductsList title='Xplode      ' imagen ="https://nutritienda-cdn.sirv.com/catalog/big/a/4708-bsn-no-xplode-3-0-600g-v4.jpg? "quantity='1kg' scoop='50gr de proteina' Stock={8}  initial={1} price={250}/>
+          
+    
         </div>
     ) 
 }
