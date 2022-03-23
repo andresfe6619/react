@@ -5,9 +5,8 @@ import SumarizeRemove from "./itemCount";
 
 
 
-
-const ProductsList = (props) => {
-   
+export default function  ProductsList  (props)  { 
+    
         return(
             <div className="Productos" >
                 <h2>{props.title}</h2>
@@ -15,7 +14,7 @@ const ProductsList = (props) => {
      height="341"></img>
                 <p>Precio : $ {props.price}</p>
                 <p>Cantidad :  {props.quantity}</p>
-                <p>Cada servicio :{props.scoop} de Proteina</p>
+                <p>Cada servicio :{props.scoop}</p>
                <p> Stock :  {props.Stock}</p>
                 <SumarizeRemove Stock =  {props.Stock} Inicial = {props.initial} />
                 
@@ -24,4 +23,4 @@ const ProductsList = (props) => {
     
 }
 
-export default ProductsList
+ 

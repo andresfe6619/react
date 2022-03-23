@@ -4,6 +4,8 @@ import './Styles/App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigate1 from "./Components/NavBar/NavBar2";
 import  ListProducts from "./Components/ListProducts/ProductsReady"
+import  Creatins1 from "./Components/ListProducts/itemList"
+
 function App() {
   return (
     <div className="App ">   
@@ -14,10 +16,10 @@ function App() {
       <ListProducts> 
         Proteinas
       </ListProducts> 
-      <ListProducts> 
-        Mancuernas
-      </ListProducts> 
-
+      
+       <h2 className="blancoNegro">Creatinas</h2>
+      <Creatins1>
+      </Creatins1>
 
         <img src={logo} className="App-logo" alt="logo" />
         <p>
