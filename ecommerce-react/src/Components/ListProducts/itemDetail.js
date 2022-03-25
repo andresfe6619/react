@@ -11,7 +11,7 @@
      Imagen: "https://m.media-amazon.com/images/I/31AXmaR3d+L.jpg " ,
      title2: "Info tecnica :" ,
                  
- 
+     price: "$200",
  
               subtitle:  "contiene:" , 
                 

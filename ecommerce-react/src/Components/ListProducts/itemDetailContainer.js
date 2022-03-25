@@ -6,8 +6,8 @@ import React, {useState, useEffect} from 'react'
 
         const getWhey = new Promise((resolve, reject) => {
             setTimeout(() => {
-              resolve(Proteinas);
-            }, 2000);
+              resolve(wheyProtein);
+            }, 3000);
           });
           const getWheyAsync = async () => {
             try {
@@ -21,8 +21,8 @@ import React, {useState, useEffect} from 'react'
         } ;
 
         useEffect( () => {
-            getWheyAsync().then( (Proteins) => {
-                setProteinas(Proteins)
+            getWheyAsync().then( () => {
+                
             }).finally( () => {
                 console.log("Ya organizamos las proteinas :)")
             })
@@ -32,22 +32,23 @@ import React, {useState, useEffect} from 'react'
             <div >
               { 
              
-                wheyProtein.length ? ( 
+                Proteinas.length ? ( 
                   <>
                     {
                     
-                      wheyProtein.map((Proteina) => {
+                      Proteinas.map((Proteina, i ) => {
                       
                        return (
                           
-                          < div key={Proteina.id} className="fondoNegro"> 
+                          < div key={i} className="fondoNegro"> 
                           <section>
-  <h3 > {Proteina.title} </h3>
+  
   <img src = {Proteina.Imagen}    
      width="400"
      height="341"></img>
          
                <h6> {Proteina.title2} </h6>
+                 <h6> {Proteina.price}  </h6> 
                   <ul className="listaConPuntos"> 
                      
  
@@ -116,7 +117,7 @@ import React, {useState, useEffect} from 'react'
                    }
                 </>
                ) : (
-                  <p></p>
+                  <p> Proteinas en camino :) </p>
               )
               
              }

@@ -20,8 +20,8 @@ const getCreatinas = new Promise((resolve, reject) => {
 
 const getCreatinasAsync = async () => {
     try {
-      const Aminoacidos = await getCreatinas;
-      setCreatinas(Aminoacidos);
+      const aminoacidos = await getCreatinas;
+      setCreatinas(aminoacidos);
     } catch (Error) {
       console.log(Error);
     
@@ -31,40 +31,30 @@ const getCreatinasAsync = async () => {
 
 
 useEffect( () => {
-    getCreatinasAsync().then( (Creatines) => {
-        setCreatinas(Creatines)
+    getCreatinasAsync().then( () => {
+        
     }).finally( () => {
         console.log("Ya organizamos las creatinas :)")
     })
 }, []);
 
 
-// return(
-//     <div>
-//         {CreatineList.map( ( Creatina ) => {
-//             const {id} = Creatina
 
-//             return(
-//                 <ProductsList  props={Creatina} key={id}/>
-//             )
-//         })}
-//     </div>
-// ) 
 
 
  return (
      <div >
        { 
       
-         CreatineList.length ? ( 
+         Creatinas.length ? ( 
            <>
              {
              
-               CreatineList.map((Creatina) => {
+               Creatinas.map((Creatina, i) => {
                
                 return (
                    
-                   <div key={Creatina.id}>
+                   <div key={i}>
                    
                      <ProductsList  imagen = {Creatina.imagen}  alt={Creatina.imagen} width="400"
                     height="341"
@@ -82,7 +72,7 @@ useEffect( () => {
             }
          </>
         ) : (
-           <p></p>
+           <p> nuestra mascota no quiere soltar las creatinas, ¡un momento por favor!</p>
        )
        
       }

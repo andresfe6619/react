@@ -22,6 +22,7 @@ function App() {
        <h2 className="blancoNegro">Creatinas</h2>
       <Creatins1 className="Productos">
       </Creatins1>
+      <h2 className="blancoNegro">Proteina Whey</h2>
       <ProteinDetails></ProteinDetails>
      
     
