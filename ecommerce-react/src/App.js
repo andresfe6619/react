@@ -1,14 +1,16 @@
-import logo from './logo.svg';
 
+//estilos
 import './Styles/App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+//componentes
 import Navigate1 from "./Components/NavBar/NavBar2";
 import  ListProducts from "./Components/ListProducts/ProductsReady"
 import  Creatins1 from "./Components/ListProducts/itemList"
+import { ProteinDetails } from './Components/ListProducts/itemDetailContainer';
 
 function App() {
   return (
-    <div className="App ">   
+    <div className="App">   
 
       <header >
       < Navigate1/>
@@ -20,24 +22,8 @@ function App() {
        <h2 className="blancoNegro">Creatinas</h2>
       <Creatins1 className="Productos">
       </Creatins1>
-
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <ProteinDetails></ProteinDetails>
      
-     
-    
-    
-    
     
     </div>
   );

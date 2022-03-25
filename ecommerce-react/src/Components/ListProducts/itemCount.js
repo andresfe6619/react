@@ -25,7 +25,7 @@ const SumarizeRemove = ({Stock, Inicial}) => {
 
 return(
     <div >
-  <div >
+  <div className="bloquesito">
  
  
 

@@ -12,7 +12,10 @@ width: 100%;
 }.App {
   text-align: center;
 }
+.fondoNegro{
+  background-color: black;
 
+}
 .nav {
   width :100% ;
   display :flex;
@@ -185,7 +188,11 @@ div {
 display: inline-block;
 	color: white;
 }
-
+.table{
+  border:1;
+  padding: 6;
+  
+  }
 input {
 
 	color: white;
