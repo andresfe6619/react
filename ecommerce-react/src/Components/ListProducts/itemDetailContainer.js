@@ -41,14 +41,17 @@ import React, {useState, useEffect} from 'react'
                        return (
                           
                           < div key={i} className="fondoNegro"> 
-                          <section>
+                         
   
   <img src = {Proteina.Imagen}    
      width="400"
      height="341"></img>
-         
-               <h6> {Proteina.title2} </h6>
-                 <h6> {Proteina.price}  </h6> 
+           
+          <section className='gridDetails'>
+                <h5>Precio :</h5>
+                <h5> {Proteina.price}  </h5>
+               <h5> {Proteina.title2} </h5>
+                
                   <ul className="listaConPuntos"> 
                      
  
@@ -64,7 +67,7 @@ import React, {useState, useEffect} from 'react'
          
              
              
-                <h6> {Proteina.title3} </h6>
+                <h5> {Proteina.title3} </h5>
                  <ul className="listaConPuntos"> 
                      <li>{Proteina.Data7} </li>
                      <li>{Proteina.Data8} </li>
@@ -73,7 +76,7 @@ import React, {useState, useEffect} from 'react'
                    
              
                
-                 <h6>{Proteina.title4} </h6> 
+                 <h5>{Proteina.title4} </h5> 
                  <ul className="listaConPuntos"> 
                      
                      <li> {Proteina.Data9} </li>
@@ -90,7 +93,7 @@ import React, {useState, useEffect} from 'react'
         
  
            
-                <h6> {Proteina.title5 }</h6>
+                <h5> {Proteina.title5 }</h5>
                     
                  <ol className="listaConPuntos">
                  <li> {Proteina.Data13}</li>  

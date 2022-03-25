@@ -30,36 +30,36 @@
              
                  title3 : "Caracteristicas:" ,
                  
-                     Data7: "Sabor a vainilla gourmet" ,
-                     Data8: "Alimento en polvo de color blanco" ,
+                     Data7: "- Sabor a vainilla gourmet." ,
+                     Data8: "- Alimento en polvo de color blanco." ,
                    
                    
              
                   title4: "Beneficios:" ,   
                
                      
-                     Data9: "subir masa muscular",
-                     Data10 : "subir de peso",
-                     Data11: "mejor recuperacion post-entreno",
-                     Data12: "con su coctel de aminoacidos reduce la perdida de masa  muscular",
+                     Data9: "- Subir masa muscular.",
+                     Data10:"- Subir de peso.",
+                     Data11:"- Mejor recuperacion post-entreno.",
+                     Data12:"- Con su coctel de aminoacidos reduce la perdida de masa  muscular.",
                      
                    
                      
  
                  title5: "Recomendaciones:",
                     
-                 Data13: "1. consumase antes de  su fecha de caducidad"
+                 Data13: "1. consumase antes de  su fecha de caducidad."
                  ,
                      
-                 Data14: "2. una vez abierto consumase en el menor tiempo posible" ,
+                 Data14: "2. una vez abierto consumase en el menor tiempo posible." ,
                 
                      
               
                  
-                 Data15 :  "3. revisar que su producto tenga todos los sellos",
+                 Data15 :  "3. revisar que su producto tenga todos los sellos.",
                  
  
-                 Data16 : "4. consumase preferiblemente   dentro de los primeros 30 minutos despues del ejercicio"
+                 Data16 : "4. consumase preferiblemente   dentro de los primeros 30 minutos despues del ejercicio."
                  
                
  

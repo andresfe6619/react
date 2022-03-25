@@ -5,7 +5,7 @@ import "bootstrap"
  function Navigate1 () {
 return(
 
-<div>
+<div className="displayFlex">
 <h1   className="blancoNegro" id="cabeza"> Meowsculuos shop </h1>
 
 <header >

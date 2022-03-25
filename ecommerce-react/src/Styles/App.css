@@ -17,6 +17,24 @@
 
 .fondoNegro {
   background-color: black;
+  border: outset;
+  margin: 300px;
+  margin-top: 0%;
+}
+
+.displayFlex {
+  margin: 0%;
+}
+
+.gridDetails {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 5fr;
+      grid-template-rows: 5fr;
+  border-radius: 10px;
+  font-style: none !important;
 }
 
 .nav {
