@@ -1,50 +1,31 @@
-import React, {useState, useEffect} from 'react'
- import {wheyProtein} from "./itemDetail"
- import { useParams } from 'react-router-dom';
- 
- export const ProteinDetails = () => { 
-        const [Proteinas, setProteinas] = useState ([]);
-       const {id} = useParams();
-        const getWhey = new Promise((resolve, reject) => {
-            setTimeout(() => {
-              resolve(wheyProtein);
-            }, 3000);
-          });
-          const getWheyAsync = async () => {
-            try {
-              const Proteina = await getWhey;
-              setProteinas(Proteina);
-            } catch (Error) {
-              console.log(Error);
-            
-            }
-        
-        } ;
+import React from "react";
+import {wheyProtein} from "../ListProducts/itemDetail"
+import { ProteinDetails } from '../ListProducts/itemDetailContainer';
 
-        useEffect( () => {
-            getWheyAsync( id).then( () => {
-                
-            }).finally( () => {
-                console.log("Ya organizamos las proteinas :)")
-            })
-        }, []);
-        
-        return (
-            <div >
-              { 
-             
-                Proteinas.length ? ( 
-                  <>
-                    {
-                    
-                      Proteinas.map((Proteina, id ) => {
-                      
-                      
-                       return (
-                          
-                          < div key={id} className="fondoNegro gridDetails"> 
-    
-                 <img  src = {Proteina.Imagen}    
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+
+
+const Details = ()=>{
+     const {id, category} = useParams();
+     const [Proteina, setProduct] = useState({});
+   
+
+     
+const filterId= (array, id) =>{
+  return array.filter( (product) => {
+     if(product.id == id){
+        return setProduct(product)
+               
+    }})}
+useEffect (() => {
+filterId(wheyProtein, id )
+},[])
+
+    return (
+   
+<div className="fondoNegro gridDetails" >
+<img  src = {Proteina.Imagen}    
      width="400"
      height="341"/>    
           <section className=''>
@@ -115,22 +96,8 @@ import React, {useState, useEffect} from 'react'
                
              <button> comprar </button>
           </section>    
-                     
-                           
-                       </div>
-                      );
-                    })
-                   }
-                </>
-               ) : (
-                  <p> Proteinas en camino :) </p>
-              )
-              
-             }
-           </div>  );
-        };
-  
-  
-  
 
-  
+ </div>   )};
+   
+   
+ export default Details;

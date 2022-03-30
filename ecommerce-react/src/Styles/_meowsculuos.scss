@@ -9,14 +9,24 @@ text-decoration: none !important;
 letter-spacing: normal;
 padding: 3px;
 width: 100%;
-}.App {
+}
+
+
+.App {
   text-align: center;
 }
+.fondoHome{
+  background-color: black;
+ border: outset; 
+
+}
+
 .fondoNegro{
   background-color: black;
  border: outset; 
- margin: 300px;
+;
 margin-top: 0%;
+display: flex;
 }
 .displayFlex{
   margin: 0%;
@@ -118,8 +128,20 @@ p{
 	background: black;
 	color: white;
 }
+.imagenHome{
+  align-items:   center;
+  width: auto; height:400px;
+}
 
 
+
+.letrasFooter{
+margin-left: 2rem;
+margin-right: 28rem;
+color: #fff;
+background: none;
+display: flex;
+}
 footer{
 
 	background-image: linear-gradient( to right , black 45%,#3F3F4B 55%);
@@ -128,8 +150,7 @@ text-transform: none;
 font-size: 12px ;
  border-style: solid;
  border-width: 1px;
-margin-top: 12px;
-position: sticky;
+margin: 0px
 
 }
 
@@ -246,7 +267,7 @@ body{
  background-image: url( App.scss) !important;
 
 }
- 
+
 
  .letraNormal {
 

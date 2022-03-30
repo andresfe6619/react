@@ -1,5 +1,5 @@
 import CartWidget from "./CartWidget/CartWidgetShopping";
-
+import { Link }  from 'react-router-dom';
 import "bootstrap"
 
  function Navigate1 () {
@@ -10,9 +10,9 @@ return(
 
 <header >
 
-<nav id="arriba" className="navbar navbar-expand-xl fondoImagen5"  aria-label="Third navbar example">
+<nav id="arriba" className="navbar navbar-expand-lg fondoImagen5"  aria-label="Third navbar example">
     <div className="container-fluid">
-      <a className="navbar-brand" href="index.html"> Menú principal</a>
+      < Link to= {"/"}className="navbar-brand" >   Menú principal</Link>
       <button className="navbar-toggler navbar-dark botonBurger" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -20,7 +20,7 @@ return(
       <div className="collapse navbar-collapse" id="navbarsExample03">
         <ul className="navbar-nav me-auto mb-2 mb-sm-0">
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="productos.html">Productos</a>
+            <Link to= '/Productos'className="nav-link active" aria-current="page" href="productos.html">Productos</Link>
           </li>
           <li className="nav-item">
             <a className="nav-link" href="servicios.html">servicios</a>

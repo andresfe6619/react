@@ -4,33 +4,35 @@ import './Styles/App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //componentes
 import Navigate1 from "./Components/NavBar/NavBar2";
-import  Creatins1 from "./Components/ListProducts/itemList"
-import { ProteinDetails } from './Components/ListProducts/itemDetailContainer';
+import Footer from "./Components/footer/footer";
 // rutas
-import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
-import {ListProducts3} from "./Components/ListProducts/home";
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {ListProducts3} from "./Components/pages/Products";
+import Details from "./Components/pages/detalle";
+import {TinyHome} from "./Components/pages/home";
+import {Error} from "./Components/pages/Error";
+
+
 
 function App() {
   return (
   
-  <div className="App">   
+  <div className="App">    
 <BrowserRouter>
-
       <header>
       < Navigate1/>
-       </header>  
-      <Routes>
-      <Route path="/" element= {<ListProducts3/>} /> 
      
-      
-       {/* <h2 className="blancoNegro">Creatinas</h2>
-      <Creatins1 className="Productos">
-      </Creatins1>
-      <h2 className="blancoNegro">Proteina Whey</h2>
-      <ProteinDetails></ProteinDetails> */}
+      </header>  
+     
+      <Routes>
+      <Route path="/" element= {<TinyHome/>}/> 
+      <Route path= "/Detalle/:id" element= {<Details />} />
+      <Route path='/Productos' element= {<ListProducts3/>} />
+      <Route path='*' element= {<Error/>} />
+    
      </Routes>
      </BrowserRouter>
-   
+      <Footer/>
     </div>
   );
 }
