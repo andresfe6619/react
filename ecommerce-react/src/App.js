@@ -4,28 +4,33 @@ import './Styles/App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 //componentes
 import Navigate1 from "./Components/NavBar/NavBar2";
-import  ListProducts from "./Components/ListProducts/ProductsReady"
 import  Creatins1 from "./Components/ListProducts/itemList"
 import { ProteinDetails } from './Components/ListProducts/itemDetailContainer';
+// rutas
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+import {ListProducts3} from "./Components/ListProducts/home";
 
 function App() {
   return (
-    <div className="App">   
+  
+  <div className="App">   
+<BrowserRouter>
 
-      <header >
+      <header>
       < Navigate1/>
        </header>  
-      <ListProducts> 
-        Proteinas
-      </ListProducts> 
+      <Routes>
+      <Route path="/" element= {<ListProducts3/>} /> 
+     
       
-       <h2 className="blancoNegro">Creatinas</h2>
+       {/* <h2 className="blancoNegro">Creatinas</h2>
       <Creatins1 className="Productos">
       </Creatins1>
       <h2 className="blancoNegro">Proteina Whey</h2>
-      <ProteinDetails></ProteinDetails>
-     
-    
+      <ProteinDetails></ProteinDetails> */}
+     </Routes>
+     </BrowserRouter>
+   
     </div>
   );
 }

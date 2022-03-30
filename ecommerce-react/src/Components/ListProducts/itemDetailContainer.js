@@ -109,8 +109,8 @@ import React, {useState, useEffect} from 'react'
  
  
                  </ol>   
-                
-            
+                <button> comprar </button>
+             
           </section>    
                      
                            
