@@ -1,15 +1,15 @@
 import React from "react";
 import {wheyProtein} from "../ListProducts/itemDetail"
 import {SumarizeRemove} from "../ListProducts/itemCount"
-import ProductsList from "../ListProducts/Products"
+//import ProductsList from "../ListProducts/Products"
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import ListProducts from "../ListProducts/ProductsReady";
+//import ListProducts from "../ListProducts/ProductsReady";
 
 const Details = ()=>{
      const {id,  category} = useParams();
      const [Proteina, setProduct] = useState({});
-     
+
 console.log (Proteina)
 
    useEffect (() => {
@@ -19,7 +19,7 @@ console.log (Proteina)
   
 
      const filterId= (array, id) =>{
-  return array.find( (product) => {if(product.id === id){return (setProduct(product))
+  return array.map( (product) => {if(product.id === id){return setProduct(product, id)
         
      
                
@@ -32,7 +32,8 @@ console.log (Proteina)
 
 <img  src = {Proteina.Imagen}    
      width="500"
-     height="500"/>    
+     height="500"
+     alt={Proteina.Imagen}/>    
           <section className=''>
                           
   
@@ -93,13 +94,13 @@ console.log (Proteina)
  
                  <li> {Proteina.Data16}</li> 
  
-                 <li> {Proteina.initial}</li>
+                 
  
  
- 
+     <SumarizeRemove  Stock =  {10} Inicial = {1} />
                  </ol>   
                
-            <SumarizeRemove  Stock =  { Proteina.Stock} Inicial = {Proteina.initial} />
+          
           </section>    
 
  </div>  )};

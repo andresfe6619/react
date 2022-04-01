@@ -6,13 +6,13 @@ import  Proteinas  from "../../Styles/img/alimentos.jpg";
 export default function Categorias() {
 
     return(
-<div className="setentavh bloquesito">
+<div className="setentavh ">
 <h1 className="blancoNegro">Categorias</h1>
 <ul className="blancoNegro bloquesito">
-<li >Proteinas
- <Link to="/Proteinas" ><div><img src={Proteinas} alt="proteinas" width="250" height="250" /></div> </Link></li>
+<Link to="/Proteinas" ><li >Proteinas
+ <div><img src={Proteinas} alt="proteinas" width="250" height="250" /></div></li> </Link>
  
- <Link to="/Creatinas"><li>Creatinas
+<Link to="/Creatinas"><li>Creatinas
  <div><img src="https://selectos.eu/wp-content/uploads/2020/12/Creatine_carousel_ensemble.jpg"  alt="creatinas"  width="250" height="250" /></div></li></Link>
 </ul>
 </div>
