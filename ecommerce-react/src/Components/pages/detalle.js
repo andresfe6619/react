@@ -1,6 +1,6 @@
 import React from "react";
 import {wheyProtein} from "../ListProducts/itemDetail"
-import { ProteinDetails } from '../ListProducts/itemDetailContainer';
+
 
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -11,16 +11,19 @@ const Details = ()=>{
      const [Proteina, setProduct] = useState({});
    
 
-     
-const filterId= (array, id) =>{
-  return array.filter( (product) => {
+   useEffect (() => {
+
+  filterId(wheyProtein, id)
+},[id])
+  
+
+     const filterId= (array, id) =>{
+  return array.find( (product) => {
      if(product.id == id){
         return setProduct(product)
                
     }})}
-useEffect (() => {
-filterId(wheyProtein, id )
-},[])
+
 
     return (
    
@@ -97,7 +100,7 @@ filterId(wheyProtein, id )
              <button> comprar </button>
           </section>    
 
- </div>   )};
+ </div>  )};
    
    
  export default Details;

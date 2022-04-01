@@ -6,7 +6,7 @@
 
 
  export const wheyProtein = [{
-    id: 1,
+    id:  '1',
     title: "Proteína Whey",
      
      Imagen: "https://m.media-amazon.com/images/I/31AXmaR3d+L.jpg " ,
@@ -73,7 +73,7 @@
  
  
  },{ 
-    id: 2,
+    id:  '2',
     title: "SM4RT G4INER",
      
      Imagen: "https://cdnx.jumpseller.com/mis-vitaminas/image/11152503/resize/1800/1800?1645636636 " ,

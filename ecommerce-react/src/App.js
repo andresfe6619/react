@@ -7,13 +7,13 @@ import Navigate1 from "./Components/NavBar/NavBar2";
 import Footer from "./Components/footer/footer";
 // rutas
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import {ListProducts3} from "./Components/pages/Products";
 import Details from "./Components/pages/detalle";
 import {TinyHome} from "./Components/pages/home";
 import {Error} from "./Components/pages/Error";
-
-
-
+import Carrito from "./Components/pages/Carrito";
+import Categorias from './Components/pages/Categorys';
+import { Proteinas } from './Components/pages/Proteinas';
+import {Creatinas} from "./Components/pages/Creatinas";
 function App() {
   return (
   
@@ -23,16 +23,19 @@ function App() {
       < Navigate1/>
      
       </header>  
-     
+   
       <Routes>
       <Route path="/" element= {<TinyHome/>}/> 
-      <Route path= "/Detalle/:id" element= {<Details />} />
-      <Route path='/Productos' element= {<ListProducts3/>} />
+      <Route path= "/category/:id" element= {<Details />} />
+      <Route path='/Productos' element= {<Categorias/>} />
       <Route path='*' element= {<Error/>} />
-    
+      <Route path ="/Carrito" element= {<Carrito/>} />
+      <Route path = "/Proteinas" element= {<Proteinas/>} />
+      <Route path = "/Creatinas" element= {<Creatinas/>} />
      </Routes>
      </BrowserRouter>
       <Footer/>
+  
     </div>
   );
 }
