@@ -2,7 +2,7 @@ import React, {useState}  from "react"
 import { Link, useNavigate } from 'react-router-dom'
  
 
-const SumarizeRemove = ({Stock, Inicial}) => {
+const SumarizeRemove = ({Stock, Inicial, id}) => {
     const navigate = useNavigate();
     const [count, setCount] = useState(Inicial)
  
@@ -20,8 +20,8 @@ const SumarizeRemove = ({Stock, Inicial}) => {
     }
 
     const onAdd1 = () =>{ 
-        //navigate`/Detalle/${id}`
-       
+        navigate ( `/category/${id}`)
+       console.log(id)
     }   
 
 return(
@@ -35,7 +35,7 @@ return(
  <button onClick={Sumarize}>Añadir</button>  
  </div>
  
- <button className="Comprar" onClick={onAdd1}><Link to ={`/category/${id}`}>  Comprar </Link> </button>
+ <button className="Comprar" onClick={onAdd1}>Comprar  </button>
     
     
     </div>

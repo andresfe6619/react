@@ -18,9 +18,9 @@ const Details = ()=>{
   
 
      const filterId= (array, id) =>{
-  return array.find( (product) => {
-     if(product.id == id){
-        return setProduct(product)
+  return array.find( (product) => {if(product.id === id){return (setProduct(product))
+        
+     
                
     }})}
 

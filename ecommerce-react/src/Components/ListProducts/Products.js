@@ -1,5 +1,6 @@
 import React from "react"; 
 import SumarizeRemove from "./itemCount";
+import {link} from "react-router-dom";
 
 
 
@@ -31,7 +32,7 @@ export default function  ProductsList  (props)  {
                 <p>Cantidad :  {props.quantity}</p>
                 <p>Cada servicio :{props.scoop}</p>
                <p> Stock :  {props.Stock}</p>
-                <SumarizeRemove Stock =  {props.Stock} Inicial = {props.initial} />
+                <SumarizeRemove Stock =  {props.Stock} Inicial = {props.initial} id={props.id} />
                 
             </div>
         )
