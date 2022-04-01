@@ -25,13 +25,13 @@ function App() {
       </header>  
    
       <Routes>
-      <Route path="/" element= {<TinyHome/>}/> 
       <Route path= "/category/:id" element= {<Details />} />
       <Route path='/Productos' element= {<Categorias/>} />
       <Route path='*' element= {<Error/>} />
       <Route path ="/Carrito" element= {<Carrito/>} />
       <Route path = "/Proteinas" element= {<Proteinas/>} />
       <Route path = "/Creatinas" element= {<Creatinas/>} />
+      <Route path="/" element= {<TinyHome/>}/> 
      </Routes>
      </BrowserRouter>
       <Footer/>

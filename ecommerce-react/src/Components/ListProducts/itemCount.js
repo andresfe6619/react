@@ -2,7 +2,7 @@ import React, {useState}  from "react"
 import { Link, useNavigate } from 'react-router-dom'
  
 
-const SumarizeRemove = ({Stock, Inicial, id}) => {
+export  const SumarizeRemove =({Stock, Inicial,id}) => {
     const navigate = useNavigate();
     const [count, setCount] = useState(Inicial)
  
@@ -20,7 +20,7 @@ const SumarizeRemove = ({Stock, Inicial, id}) => {
     }
 
     const onAdd1 = () =>{ 
-        navigate ( `/category/${id}`)
+       
        console.log(id)
     }   
 
@@ -48,8 +48,4 @@ return(
 )
 
 }
-
-
-export default SumarizeRemove
-
 

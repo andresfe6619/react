@@ -1,15 +1,16 @@
 import React from "react";
 import {wheyProtein} from "../ListProducts/itemDetail"
-
-
+import {SumarizeRemove} from "../ListProducts/itemCount"
+import ProductsList from "../ListProducts/Products"
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-
+import ListProducts from "../ListProducts/ProductsReady";
 
 const Details = ()=>{
-     const {id, category} = useParams();
+     const {id,  category} = useParams();
      const [Proteina, setProduct] = useState({});
-   
+     
+console.log (Proteina)
 
    useEffect (() => {
 
@@ -28,9 +29,10 @@ const Details = ()=>{
     return (
    
 <div className="fondoNegro gridDetails" >
+
 <img  src = {Proteina.Imagen}    
-     width="400"
-     height="341"/>    
+     width="500"
+     height="500"/>    
           <section className=''>
                           
   
@@ -91,13 +93,13 @@ const Details = ()=>{
  
                  <li> {Proteina.Data16}</li> 
  
- 
+                 <li> {Proteina.initial}</li>
  
  
  
                  </ol>   
                
-             <button> comprar </button>
+            <SumarizeRemove  Stock =  { Proteina.Stock} Inicial = {Proteina.initial} />
           </section>    
 
  </div>  )};

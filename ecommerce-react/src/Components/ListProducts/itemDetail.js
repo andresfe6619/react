@@ -8,7 +8,8 @@
  export const wheyProtein = [{
     id:  '1',
     title: "Proteína Whey",
-     
+    Stock: 26, 
+    initial: 1, 
      Imagen: "https://m.media-amazon.com/images/I/31AXmaR3d+L.jpg " ,
      title2: "Info tecnica :" ,
          category: "Proteina",        
@@ -75,7 +76,8 @@
  },{ 
     id:  '2',
     title: "SM4RT G4INER",
-     
+    Stock: 10, 
+    initial:1,
      Imagen: "https://cdnx.jumpseller.com/mis-vitaminas/image/11152503/resize/1800/1800?1645636636 " ,
      title2: "Info tecnica :" ,
          category: "Creatina",        

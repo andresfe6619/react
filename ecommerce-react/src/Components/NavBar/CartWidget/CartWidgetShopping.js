@@ -4,7 +4,7 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 
 
 
-const CartWidget = () => {
+const  CartWidget = () => {
     return (
         <div>
           <ShoppingBagIcon
@@ -16,4 +16,4 @@ const CartWidget = () => {
     )
 }
 
-export default CartWidget
+export default CartWidget;
