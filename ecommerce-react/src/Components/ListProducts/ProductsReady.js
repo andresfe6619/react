@@ -8,7 +8,9 @@ const ListProducts = ({children}) => {
     const Sumarize  = () => {
         setContador(contador +1) 
     console.log(JSON.stringify(contador + 1))
-     
+    document.getElementById("enseñar").remove()
+    document.getElementById("ocultar").style.display = "block"
+
     
 
     }   
