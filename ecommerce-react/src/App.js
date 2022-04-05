@@ -10,7 +10,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Details from "./Components/pages/detalle";
 import {TinyHome} from "./Components/pages/home";
 import {Error} from "./Components/pages/Error";
-import Carrito from "./Components/pages/Carrito";
+import {Carrito} from "./Components/pages/Carrito";
 import Categorias from './Components/pages/Categorys';
 import { Proteinas } from './Components/pages/Proteinas';
 import {Creatinas} from "./Components/pages/Creatinas";

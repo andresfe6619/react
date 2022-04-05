@@ -2,7 +2,10 @@ import React from "react";
 import ListProducts from "../ListProducts/ProductsReady";
 
 export const Proteinas = () => { 
-    return (
+    
+  
+  
+  return (
       <div>
     <ListProducts> 
         Proteinas

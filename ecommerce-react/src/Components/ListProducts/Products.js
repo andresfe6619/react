@@ -1,10 +1,7 @@
-import React from "react"; 
+import React, {useState} from "react"; 
 import {SumarizeRemove} from "./itemCount";
 import {Link} from "react-router-dom";
-
-
-
-
+import  CartWidget  from "../NavBar/CartWidget/CartWidgetShopping";
 
 
 
@@ -13,15 +10,21 @@ import {Link} from "react-router-dom";
 
 
 export default function  ProductsList  (props)  { 
-    
-
-
+  
 
 
 
         return(
+     
+        
+        
+            
+           
+        
             <div className="Productos" >
-                <h2>{props.title}</h2>
+              
+                <h2>{props.title}      </h2>
+               
               <Link to ={ `/category/${props.id}`} > 
               <img src = {props.imagen}   width="400"
     
@@ -34,9 +37,9 @@ export default function  ProductsList  (props)  {
                 <p>Cantidad :  {props.quantity}</p>
                 <p>Cada servicio :{props.scoop}</p>
                <p> Stock :  {props.Stock}</p>
-                <SumarizeRemove Stock =  {props.Stock} Inicial = {props.initial} id={props.id} />
-                
-            </div>
+                <SumarizeRemove  Stock =  {props.Stock} Inicial = {props.initial} id={props.id}  />
+              
+            </div>  
         )
     
 }

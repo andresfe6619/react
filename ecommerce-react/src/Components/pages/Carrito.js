@@ -1,13 +1,14 @@
 import React from "react";
 
 
-const Carrito = () => {
-  return (
-    <div>
-      <h1 className="blancoNegro"> Aquí va el carrito</h1>
-    </div>
-  );
-}
 
 
-export default Carrito;
+
+export const   Carrito = (contador) => {  
+    return (
+      <div className="setentavh bloquesito">
+        <h2 className="blancoNegro  ">Aqui va el carrito</h2>
+     
+      </div>
+    )}
+

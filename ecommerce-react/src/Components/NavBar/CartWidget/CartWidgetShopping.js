@@ -3,15 +3,16 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 
 
 
-
-const  CartWidget = () => {
-    return (
+const  CartWidget = (props) => {
+   
+  
+   return (
         <div>
-          <ShoppingBagIcon
+         <ShoppingBagIcon
            fontSize="large" 
           />
             
-            <li>0</li>
+            <div>{props.carrito}</div> 
         </div>
     )
 }

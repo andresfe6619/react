@@ -5,7 +5,7 @@ import {SumarizeRemove} from "../ListProducts/itemCount"
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 //import ListProducts from "../ListProducts/ProductsReady";
-
+import  CartWidget  from "../NavBar/CartWidget/CartWidgetShopping";
 const Details = ()=>{
      const {id,  category} = useParams();
      const [Proteina, setProduct] = useState({});
@@ -18,6 +18,7 @@ console.log (Proteina)
 },[id])
   
 
+
      const filterId= (array, id) =>{
   return array.map( (product) => {if(product.id === id){return setProduct(product, id)
         
@@ -25,7 +26,15 @@ console.log (Proteina)
                
     }})}
 
+    const [contador, setContador] = useState(0)
+    const Sumarize  = () => {
+        setContador(contador +1) 
+    console.log(JSON.stringify(contador + 1))
+     
+     document.getElementById("enseñar").remove()
+     document.getElementById("ocultar").style.display = "block"
 
+    }   
     return (
    
 <div className="fondoNegro gridDetails" >
@@ -35,7 +44,7 @@ console.log (Proteina)
      height="500"
      alt={Proteina.Imagen}/>    
           <section className=''>
-                          
+             <CartWidget carrito= {contador} />              
   
       <h2 className="blancoNegro">{Proteina.title}</h2> 
                   <h5>Precio :</h5>
@@ -97,7 +106,7 @@ console.log (Proteina)
                  
  
  
-     <SumarizeRemove  Stock =  {10} Inicial = {1} />
+     <SumarizeRemove  Stock =  {10} Inicial = {1} action={Sumarize} />
                  </ol>   
                
           
