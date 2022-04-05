@@ -37,7 +37,7 @@ export default function  ProductsList  (props)  {
                 <p>Cantidad :  {props.quantity}</p>
                 <p>Cada servicio :{props.scoop}</p>
                <p> Stock :  {props.Stock}</p>
-                <SumarizeRemove  Stock =  {props.Stock} Inicial = {props.initial} id={props.id}  />
+                <SumarizeRemove  Stock =  {props.Stock} Inicial = {props.initial} id={props.id} action={props.action}  />
               
             </div>  
         )
