@@ -14,12 +14,25 @@ export function CartProvider  ({children})  {
     const removeCartProducts = (product) => {
         setCartProducts(cartProducts => cartProducts.filter(cartProduct => cartProduct.id !== product.id))}
     
+const  totalPrice = () => {
+    let total = 0
 
+    cartProducts.forEach( (cartProduct) => {
+       total = cartProduct.price + total
+    })
+
+    return total
+  }
 const data = {
         cartProducts,
        addCartProducts,
-       removeCartProducts
+       removeCartProducts,
+       totalPrice
     }
+
+  
+   
+ 
 
     return(
         <CartContext.Provider value={data}>

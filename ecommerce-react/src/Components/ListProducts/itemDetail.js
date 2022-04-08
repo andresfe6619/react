@@ -13,7 +13,7 @@
      Imagen: "https://m.media-amazon.com/images/I/31AXmaR3d+L.jpg " ,
      title2: "Info tecnica :" ,
          category: "Proteina",        
-     price: "$200",
+     price: 200,
      quantity: 1,
               subtitle:  "contiene:" , 
                 
@@ -83,7 +83,7 @@
     Imagen: "https://cdnx.jumpseller.com/mis-vitaminas/image/11152503/resize/1800/1800?1645636636 " ,
      title2: "Info tecnica :" ,
          category: "Creatina",        
-     price: "$150",
+     price: 150,
  
               subtitle:  "contiene:" , 
                 

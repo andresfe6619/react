@@ -49,7 +49,7 @@ const Details = () =>{
   
       <h2 className="blancoNegro">{Proteina.title}</h2> 
                   <h5>Precio :</h5>
-                <h5> {Proteina.price}  </h5>
+                <h5> $ {Proteina.price}  </h5>
                <h5> {Proteina.title2} </h5>
                 
                   <ul className="listaConPuntos"> 

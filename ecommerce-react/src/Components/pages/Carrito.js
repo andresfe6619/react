@@ -3,11 +3,11 @@ import {Link} from "react-router-dom";
 import CartContext from "../Context/cartContext";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { grey } from '@mui/material/colors';
-
+import Divider from '@mui/material/Divider';
 
 
 export const   Carrito = () => {  
-  const { cartProducts, removeCartProducts } = useContext(CartContext)
+  const { cartProducts, removeCartProducts, totalPrice } = useContext(CartContext)
   
   
   
@@ -17,7 +17,7 @@ export const   Carrito = () => {
   return (
       <div >
       <div className= "bloquesito">
-        <h2 className="blancoNegro  "> Carrito</h2>
+        <h2 className="blancoNegro  "> ¡Tus compras! </h2>
        </div>
     <div className="Productos1">
       <div  className="Productos2">
@@ -37,7 +37,7 @@ export const   Carrito = () => {
       return( <div key={i} className="Productos3"> 
  
           
- <Link to ={ `/category/${id}`} >     <img src={Imagen}width="100" height="100"  alt={Imagen}/>  </Link>
+ <Link to ={ `/category/${id}`} >     <img src={Imagen} height="80"  alt={Imagen}/>  </Link>
            <h2>{title}</h2>
            <h2>{price}</h2>
            <h2>{quantity}</h2>   
@@ -45,12 +45,23 @@ export const   Carrito = () => {
             fontSize="large"
  sx={{ color: grey[500] }} onClick={() => removeCartProducts(cartProduct)}/>
 
+             
+             
               </div>
       )
 
     })}</div>
       
+      <Divider></Divider>
+      <div className="Productos4">
+     
+      <h5>Total compra  </h5>
+      <h5>$ {totalPrice(cartProducts)}</h5>
       
+       <Link to = "/Productos" > <button> Sigue comprando </button></Link>
+      
+      
+      </div>
       </div>
  
  
