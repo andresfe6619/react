@@ -14,10 +14,15 @@ import {Carrito} from "./Components/pages/Carrito";
 import Categorias from './Components/pages/Categorys';
 import { Proteinas } from './Components/pages/Proteinas';
 import {Creatinas} from "./Components/pages/Creatinas";
+// context
+import { CartProvider } from './Components/Context/cartContext.js';
+
+
 function App() {
   return (
   
   <div className="App">    
+<CartProvider>
 <BrowserRouter>
       <header>
       < Navigate1/>
@@ -35,7 +40,7 @@ function App() {
      </Routes>
      </BrowserRouter>
       <Footer/>
-  
+  </CartProvider>
     </div>
   );
 }

@@ -38,7 +38,7 @@ return(
 
             </ul>
           </li>
-         <Link to = "/Carrito" ><CartWidget></CartWidget></Link>
+         <CartWidget></CartWidget>
         </ul>
         <form>
          <input type="text" name="Busqueda" placeholder="encuentra productos" className="letraNormal"/>

@@ -14,7 +14,7 @@
      title2: "Info tecnica :" ,
          category: "Proteina",        
      price: "$200",
- 
+     quantity: 1,
               subtitle:  "contiene:" , 
                 
                     
@@ -78,7 +78,9 @@
     title: "SM4RT G4INER",
     Stock: 10, 
     initial:1,
-     Imagen: "https://cdnx.jumpseller.com/mis-vitaminas/image/11152503/resize/1800/1800?1645636636 " ,
+    quantity: 1,
+    
+    Imagen: "https://cdnx.jumpseller.com/mis-vitaminas/image/11152503/resize/1800/1800?1645636636 " ,
      title2: "Info tecnica :" ,
          category: "Creatina",        
      price: "$150",

@@ -3,18 +3,20 @@ import {wheyProtein} from "../ListProducts/itemDetail"
 import {SumarizeRemove} from "../ListProducts/itemCount"
 //import ProductsList from "../ListProducts/Products"
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 //import ListProducts from "../ListProducts/ProductsReady";
-import  CartWidget  from "../NavBar/CartWidget/CartWidgetShopping";
-const Details = ()=>{
+
+import CartContext from "../Context/cartContext";
+
+const Details = () =>{
      const {id,  category} = useParams();
      const [Proteina, setProduct] = useState({});
-
-console.log (Proteina)
+     const {cartProducts, addCartProducts} = useContext(CartContext)
+   
 
    useEffect (() => {
 
-  filterId(wheyProtein, id)
+  filterId(wheyProtein, id,)
 },[id])
   
 
@@ -29,11 +31,10 @@ console.log (Proteina)
     const [contador, setContador] = useState(0)
     const Sumarize  = () => {
         setContador(contador +1) 
-    console.log(JSON.stringify(contador + 1))
-     
+        
      document.getElementById("enseñar").remove()
      document.getElementById("ocultar").style.display = "block"
-
+     addCartProducts(Proteina)
     }   
     return (
    
@@ -44,7 +45,7 @@ console.log (Proteina)
      height="500"
      alt={Proteina.Imagen}/>    
           <section className=''>
-             <CartWidget carrito= {contador} />              
+                        
   
       <h2 className="blancoNegro">{Proteina.title}</h2> 
                   <h5>Precio :</h5>

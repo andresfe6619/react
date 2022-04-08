@@ -1,7 +1,7 @@
 import React, {useState} from "react"; 
 import {SumarizeRemove} from "./itemCount";
 import {Link} from "react-router-dom";
-import  CartWidget  from "../NavBar/CartWidget/CartWidgetShopping";
+
 
 
 

@@ -16,7 +16,7 @@ const ListProducts = ({children}) => {
     }   
     return(
         <div>
-            <h2 className="blancoNegro"> {children}<CartWidget carrito= {contador} /> </h2>
+            <h2 className="blancoNegro"> {children} </h2>
           
             <ProductsList  title='WHEY       'imagen ="https://m.media-amazon.com/images/I/31AXmaR3d+L.jpg " quantity="1kg"  scoop='44gr de proteina' Stock= {10} initial= {1}  price={200} id="1"   action ={Sumarize} />
             <ProductsList  title='SM4RT G4INER' imagen = "https://cdnx.jumpseller.com/mis-vitaminas/image/11152503/resize/1800/1800?1645636636"  quantity="1kg" scoop='44gr de proteina' Stock={10} initial={1} price={150} id="2" action ={Sumarize} />
