@@ -1,25 +1,24 @@
 import { createContext, useState } from "react";
 
 const CartContext = createContext();
-let miCarrito = [
-{id: 
-    "1"},
-{id: "2"}
-
-
-]
-
 
 
 
 export function CartProvider  ({children})  {
     const [cartProducts, setCartProducts] = useState([])
-const addCartProducts = (product) => {
-    setCartProducts(cartProducts=>[...cartProducts, product])}
+  const addCartProducts = (product) => {
+   let Duplicate = cartProducts.find(cartProduct => cartProduct.id === product.id)
+   
+    !Duplicate && setCartProducts(cartProducts=>[...cartProducts, product])}
     
+    const removeCartProducts = (product) => {
+        setCartProducts(cartProducts => cartProducts.filter(cartProduct => cartProduct.id !== product.id))}
+    
+
 const data = {
         cartProducts,
-       addCartProducts
+       addCartProducts,
+       removeCartProducts
     }
 
     return(

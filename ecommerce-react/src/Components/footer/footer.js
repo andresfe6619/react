@@ -6,7 +6,7 @@ function Footer () {
 
 <div>
 <footer  > 
-  <p className="letrasFooter bloquesito">  
+  <p className="letrasFooter bloquesito ">  
 	Copyright 2021, Todos los derechos reservados.
 
   </p>

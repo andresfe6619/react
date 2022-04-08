@@ -8,7 +8,7 @@ import CartContext from '../../Context/cartContext.js';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { grey } from '@mui/material/colors';
 const  CartWidget = () => {
-  const { cartProducts } = useContext(CartContext)
+  const { cartProducts, removeCartProducts } = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const [quantity, setQuantity] = useState(1);
     
@@ -20,11 +20,7 @@ const  CartWidget = () => {
       setAnchorEl(null);
     };
     
-   const Borrar = (e) => {
-    e.stopPropagation()
-    //document.getElementById("seVaBorrar").remove()
    
-  }
 
 
 
@@ -83,23 +79,7 @@ const  CartWidget = () => {
                 <p>Carrito de Compras</p>
                 <Divider />
                 {cartProducts.map( (cartProduct, i) => {
-                 
-                  // if (cartProduct.id = i) {
-                  //    setQuantity( + 1)
-                  // }else{
-                  //   console.log("no son iguales")
-                  // }
-                  
-                
-                  
-                  
-                  
-                  
-                  
-                  
-                 
-                 
-               return(
+                         return(
                         <MenuItem className='item-cart-modal 'id="seVaBorrar" key={i}>
                             <div className='item-cart-modal__img' >
                             <Link to ={ `/category/${cartProduct.id}`} >    <img src={cartProduct.Imagen} width="100" height="100"  alt={cartProduct.Imagen}/>   </Link>
@@ -107,7 +87,7 @@ const  CartWidget = () => {
                             <div className='item-cart-modal__info'>
                                 <p>{cartProduct.title} <DeleteIcon 
                                 fontSize="large"
-                                sx={{ color: grey[500] }}  onClick={Borrar}/></p>
+                                sx={{ color: grey[500] }} onClick={() => removeCartProducts(cartProduct)}/></p>
                                 <span className="letraNormal">$ {cartProduct.price} </span>
                                  
                               <p> Productos : {cartProduct.quantity} </p>
