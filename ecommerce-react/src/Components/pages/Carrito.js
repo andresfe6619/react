@@ -47,7 +47,7 @@ else {
       <div >
       <div className= "bloquesito">
         <h2 className="blancoNegro  "> ¡Tus compras! </h2>
-        <h2 className="blancoNegro"> {setCategory(cartProducts)} </h2>
+        <h2 className="blancoNegro displayFlex1"> {setCategory(cartProducts)} </h2>
         
        </div>
     <div className="Productos1">
