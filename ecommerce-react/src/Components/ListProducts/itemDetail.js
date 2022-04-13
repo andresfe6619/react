@@ -82,7 +82,7 @@
     
     Imagen: "https://cdnx.jumpseller.com/mis-vitaminas/image/11152503/resize/1800/1800?1645636636 " ,
      title2: "Info tecnica :" ,
-         category: "Creatina",        
+         category: "Proteina",        
      price: 150,
  
               subtitle:  "contiene:" , 

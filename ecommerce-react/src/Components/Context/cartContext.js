@@ -23,12 +23,28 @@ const  totalPrice = () => {
 
     return total
   }
+  
+
+  const setCategory = () => {
+if (cartProducts.category =  "Proteina") { return ("Proteinas")  } 
+else{return ("Sin identificar")}
+ 
+}
+  
+  const totalQuantity = () => {
+let total = cartProducts.length
+  
+    return total
+  }
+
 const data = {
         cartProducts,
        addCartProducts,
        removeCartProducts,
-       totalPrice
-    }
+       totalPrice,
+       totalQuantity,
+       setCategory
+ }
 
   
    

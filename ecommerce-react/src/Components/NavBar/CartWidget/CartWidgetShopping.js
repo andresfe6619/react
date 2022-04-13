@@ -26,11 +26,19 @@ const  CartWidget = () => {
 
 
 
-
-    
+if (cartProducts.length === 0) { return ("")  } 
+else {      
   return (
-        <div className='cart-button'>
-            <ShoppingBagIcon 
+
+              
+              
+ <div>         
+         
+
+  
+              
+              
+              <ShoppingBagIcon 
                 fontSize="large"
                 onClick={handleClick}
                 size="small"
@@ -104,9 +112,9 @@ const  CartWidget = () => {
                 <div className='footer-modal-cart'>
                     <button className="btn-custom"><Link to="/Carrito">Iniciar la compra</Link></button>
                 </div>
-            </Menu>
-        </div>
-    )
+            </Menu> </div>
+ 
+    )}
 }
 
 
