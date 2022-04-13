@@ -65,7 +65,7 @@ else {
     {cartProducts.map((cartProduct, i) => {
    
       const { id, title, price, Imagen, quantity, category } = cartProduct
-    console.log({category})   
+      
     return( <div key={i} className="Productos3"> 
  
           
@@ -91,7 +91,7 @@ else {
      
       <h5>Total compra  </h5>
       <h5>  Productos : {totalQuantity()} </h5>
-      <h5>$ {totalPrice(cartProducts)}</h5>
+      <h5> Precio     : $ {totalPrice(cartProducts)}</h5>
       
        <Link to = "/" > <button className="Comprar" > Terminar compra </button></Link>
        <Link to = "/Productos" > <button> Sigue comprando </button></Link>
