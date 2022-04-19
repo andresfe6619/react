@@ -12,8 +12,8 @@ import {TinyHome} from "./Components/pages/home";
 import {Error} from "./Components/pages/Error";
 import {Carrito} from "./Components/pages/Carrito";
 import Categorias from './Components/pages/Categorys';
-import { Proteinas } from './Components/pages/Proteinas';
-import {Creatinas} from "./Components/pages/Creatinas";
+import  Proteinas  from './Components/pages/Proteinas';
+import Creatinas from "./Components/pages/Creatinas";
 // context
 import { CartProvider } from './Components/Context/cartContext.js';
 

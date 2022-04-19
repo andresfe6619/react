@@ -47,7 +47,7 @@ else {
       <div >
       <div className= "bloquesito">
         <h2 className="blancoNegro  "> ¡Tus compras! </h2>
-        <h2 className="blancoNegro displayFlex1"> {setCategory(cartProducts)} </h2>
+      
         
        </div>
     <div className="Productos1">
@@ -71,7 +71,7 @@ else {
           
  <Link to ={ `/category/${id}`} >     <img src={Imagen} height="80"  alt={Imagen}/>  </Link>
            <h2>{title}</h2>
-           <h2>{price}</h2>
+           <h2> $ {price}</h2>
            <h2>{quantity}</h2>   
           
            <DeleteIcon 

@@ -1,34 +1,61 @@
 import React from "react";
-import {wheyProtein} from "../ListProducts/itemDetail"
+
 import {SumarizeRemove} from "../ListProducts/itemCount"
 //import ProductsList from "../ListProducts/Products"
 import { useParams } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 //import ListProducts from "../ListProducts/ProductsReady";
-
+import { getDoc, doc } from "firebase/firestore";
 import CartContext from "../Context/cartContext";
+import RAM from "../../fireBase";
+
 
 const Details = () =>{
-     const {id,  category} = useParams();
+     const {id} = useParams();
      const [Proteina, setProduct] = useState({});
      const {cartProducts, addCartProducts} = useContext(CartContext)
    
+const getProduct = async () => {
+
+const collectionRef = doc(RAM, 'Productos', id)
+const ProductSnapshot = await getDoc(collectionRef);
+
+
+if (ProductSnapshot.exists()) {
+  let Product = ProductSnapshot.data();
+  Product.id= ProductSnapshot.id;
+  setProduct(Product);
+  console.log("Document data:", ProductSnapshot.data());
+}else{
+  console.log("No such document!");
+
+} 
+
+
+}
+
+
+
+
+
+
 
    useEffect (() => {
-
-  filterId(wheyProtein, id,)
+   getProduct()
+ // filterId(wheyProtein, id,)
 },[id])
   
 
 
-     const filterId= (array, id) =>{
-  return array.map( (product) => {if(product.id === id){return setProduct(product, id)
+     //const filterId= (array, id) =>{
+  //return array.map( (product) => {if(product.id === id){return setProduct(product, id)
         
      
                
-    }})}
+   // }})}
 
     const [contador, setContador] = useState(0)
+    
     const Sumarize  = () => {
         setContador(contador +1) 
         
@@ -50,41 +77,41 @@ const Details = () =>{
       <h2 className="blancoNegro">{Proteina.title}</h2> 
                   <h5>Precio :</h5>
                 <h5> $ {Proteina.price}  </h5>
-               <h5> {Proteina.title2} </h5>
+               <h5> peso: </h5>
                 
-                  <ul className="listaConPuntos"> 
-                     
- 
- 
-                     <li>  {Proteina.Data1}</li>
-                     <li>  {Proteina.Data2}</li>
-                     <li>  {Proteina.Data3}</li>
-                     <li>  {Proteina.Data4}</li>
-                     <li>  {Proteina.Data5}</li>
-                     <li> {Proteina.Data6}</li>
-                   </ul>
+                  
+        
+                     <h5>   {Proteina.peso}</h5>
+                    
+                   
                   
          
              
              
-                <h5> {Proteina.title3} </h5>
+                <h5> caracteristicas: </h5>
                  <ul className="listaConPuntos"> 
-                     <li>{Proteina.Data7} </li>
-                     <li>{Proteina.Data8} </li>
+                     <li>{Proteina.flavor} </li>
+                     <li> {Proteina.color} </li>
                    
                    </ul>   
                    
              
                
-                 <h5>{Proteina.title4} </h5> 
+                 <h5> Contenido: </h5> 
                  <ul className="listaConPuntos"> 
                      
-                     <li> {Proteina.Data9} </li>
-                     <li> {Proteina.Data10} </li>
-                     <li> {Proteina.Data11} </li>
-                     <li> {Proteina.Data12} </li>
+                     <li> {Proteina.calories} </li>
+                     <li> {Proteina.carbohydrates} </li>
+                     <li> {Proteina.protein} </li>
+               
                    </ul>
+                   <h5> instrucciones: </h5> 
+                 <ul className="listaConPuntos"> 
                      
+                     <li> {Proteina.instructions} </li>
+                   
+               
+                   </ul>
  
  
                     
@@ -93,21 +120,19 @@ const Details = () =>{
         
  
            
-                <h5> {Proteina.title5 }</h5>
+                <h5> Ventajas: </h5>
                     
                  <ol className="listaConPuntos">
-                 <li> {Proteina.Data13}</li>  
+                 <li> {Proteina.advantages}</li>  
  
-                 <li> {Proteina.Data14}</li> 
+                 <li> {Proteina.advantages1}</li> 
  
-                 <li> {Proteina.Data15}</li>
- 
-                 <li> {Proteina.Data16}</li> 
+                 <li> {Proteina.advantages2}</li>
  
                  
  
  
-     <SumarizeRemove  Stock =  {10} Inicial = {1} action={Sumarize} />
+     <SumarizeRemove  Stock =  {Proteina.Stock} Inicial = {1} action={Sumarize} />
                  </ol>   
                
           

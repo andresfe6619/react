@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
-
+import { collection, getDocs, query,  where } from "firebase/firestore";
+import RAM  from "../../fireBase";
 const CartContext = createContext();
 
 
@@ -26,8 +27,7 @@ const  totalPrice = () => {
   
 
   const setCategory = () => {
-if (cartProducts.category =  "Proteina") { return ("Proteinas")  } 
-else{return ("Sin identificar")}
+    const collectionRef = collection(RAM, 'Productos')
  
 }
   
