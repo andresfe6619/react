@@ -208,11 +208,11 @@ else {
      <form onSubmit={addSubmit}>
           <Typography id="modal-modal-description" >
         
-<input type="text" name="name" placeholder="Bruce" className="bloquesito" value={Form.name} onChange={addChange} /> 
-<input type="text" name="lastName" placeholder="Wayne"className="bloquesito" value={Form.lastName} onChange={addChange} />
-<input type="number" name="phone" placeholder="xxx-xxx-xx-xx" className="bloquesito" value={Form.phone} onChange={addChange} />
-<input type="text" name="Email" placeholder="Batman@gmail.bat" className="bloquesito" value={Form.Email} onChange={addChange} />
-<input type="text" name="address" placeholder="Callejó del crimen" className="bloquesito" value={Form.address} onChange={addChange} />
+<input type="text" name="name" placeholder="Bruce" className="bloquesito" value={Form.name} onChange={addChange} required/> 
+<input type="text" name="lastName" placeholder="Wayne"className="bloquesito" value={Form.lastName} onChange={addChange} required/>
+<input type="number" name="phone" placeholder="xxx-xxx-xx-xx" className="bloquesito" value={Form.phone} onChange={addChange} required/>
+<input type="text" name="Email" placeholder="Batman@gmail.bat" className="bloquesito" value={Form.Email} onChange={addChange} required/>
+<input type="text" name="address" placeholder="Callejó del crimen" className="bloquesito" value={Form.address} onChange={addChange} required/>
 <label >Aceptar terminos y condiciones <input type="Checkbox"  required /></label>
 
          
