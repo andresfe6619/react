@@ -42,7 +42,11 @@ display:block;
  border: outset; 
 
 }
-
+.fondoHome1{
+  background-color: black;
+ border: outset; 
+ border-color: #fff;
+}
 .fondoNegro{
   background-color: black;
  border: outset; 
@@ -190,9 +194,11 @@ background: none;
 
 p{
 
-	background: black;
+background-color: #000;
 	color: white;
 }
+
+
 .imagenHome{
   align-items:   center;
   width: auto; height:400px;
@@ -201,7 +207,9 @@ p{
   align-items:   center;
   width: auto; height:200px;
   margin-top: 0;
+margin-bottom: 50px;
 }
+
 
 
 .letrasFooter{
@@ -371,7 +379,7 @@ body{
     }
  
  .bloquesito{
-   display: block;
+   display: block !important;
  
   }
 

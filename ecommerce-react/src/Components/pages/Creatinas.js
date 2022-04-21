@@ -9,8 +9,9 @@ import CartContext from "../Context/cartContext";
 
 
 
-export default function  Creatinas  (props)  { 
-    const {cartProducts, addCartProducts, setCategory} = useContext(CartContext)
+
+export default function  Creatinas  ()  { 
+    const {cartProducts, addCartProducts} = useContext(CartContext)
     const [contador, setContador] = useState(0)
   
 

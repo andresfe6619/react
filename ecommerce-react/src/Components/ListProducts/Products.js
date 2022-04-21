@@ -15,7 +15,7 @@ export default function  ProductsList  (props)  {
 
     const [loading , setLoading] = useState(true)
 
-    const { category } = useParams()
+    const { id, category } = useParams()
 
     const [products, setProducts] = useState([])
  
@@ -61,7 +61,7 @@ const filterProductByCategory = (array , category) => {
     document.getElementById("enseñar").remove()
     document.getElementById("ocultar").style.display = "block"
     addCartProducts(products)
-
+    console.log(addCartProducts)
 
     }   
     

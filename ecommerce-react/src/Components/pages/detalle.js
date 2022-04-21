@@ -61,7 +61,9 @@ if (ProductSnapshot.exists()) {
         
      document.getElementById("enseñar").remove()
      document.getElementById("ocultar").style.display = "block"
+     
      addCartProducts(Proteina)
+    
     }   
     return (
    

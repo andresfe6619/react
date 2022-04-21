@@ -1,14 +1,15 @@
 import { createContext, useState } from "react";
-import { collection, getDocs, query,  where } from "firebase/firestore";
-import RAM  from "../../fireBase";
+
 const CartContext = createContext();
 
 
 
 export function CartProvider  ({children})  {
     const [cartProducts, setCartProducts] = useState([])
-  const addCartProducts = (product) => {
-   let Duplicate = cartProducts.find(cartProduct => cartProduct.id === product.id)
+     
+    const addCartProducts = (product) => {
+   
+    let Duplicate = cartProducts.find(cartProduct => cartProduct.id === product.id)
    
     !Duplicate && setCartProducts(cartProducts=>[...cartProducts, product])}
     
@@ -19,17 +20,18 @@ const  totalPrice = () => {
     let total = 0
 
     cartProducts.forEach( (cartProduct) => {
-       total = cartProduct.price + total
+       total = cartProduct.price *cartProduct.quantity + total 
     })
 
     return total
   }
-  
+const  removeAll = () => {
+    let products = []
+    setCartProducts(products)
+ return products
 
-  const setCategory = () => {
-    const collectionRef = collection(RAM, 'Productos')
- 
 }
+  
   
   const totalQuantity = () => {
 let total = cartProducts.length
@@ -43,8 +45,9 @@ const data = {
        removeCartProducts,
        totalPrice,
        totalQuantity,
-       setCategory
+       removeAll
  }
+
 
   
    

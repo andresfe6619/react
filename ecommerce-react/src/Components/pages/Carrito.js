@@ -1,15 +1,104 @@
-import React,  {useContext} from "react";
+import React,  {useContext, useState} from "react";
 import {Link} from "react-router-dom";
 import CartContext from "../Context/cartContext";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { grey } from '@mui/material/colors';
 import Divider from '@mui/material/Divider';
-
+import RAM from "../../fireBase";
+import Box from '@mui/material/Box';
+import {addDoc, collection} from "firebase/firestore";
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 
 export const   Carrito = () => {  
-  const { cartProducts, removeCartProducts, totalPrice, totalQuantity, setCategory } = useContext(CartContext)
+  const { cartProducts, removeCartProducts, totalPrice, totalQuantity, removeAll } = useContext(CartContext)
+  const [open, setOpen] = React.useState(false);
+  const [message, setMessage] = useState();
+  const[Form, SetForm] = useState({
+          name : "",
+          lastName : "",
+          Email : "",
+          phone : "",
+          address:"",
+  })
+  const [order, setOrder] = useState(
+  {
+      buyer : Form,
+      items: cartProducts.map((cartProduct) => {
+return{ 
+      id: cartProduct.id,
+       title: cartProduct.title,
+        price: cartProduct.price,
+         quantity: cartProduct.quantity,
+    }
+      
+      }),
+      total: totalPrice(),
+
+
+
+
+  }
+  );
+  console.log(
+    order
+  )
   
+  const handleOpen = () => setOpen(true);
   
+const addSubmit=(e) => {
+  e.preventDefault()
+  
+  let sending = {...order,
+    buyer: Form,}
+  setOrder({...order,
+    buyer: Form,
+  } 
+    )
+
+    console.log("Orden generada",
+      order
+    )
+   push(sending) 
+  
+  }
+const push= async (sending) => {
+const toFirebase = collection(RAM, 'Peticiones')
+    const to =  await addDoc(toFirebase, sending)
+    console.log("Orden generada",
+    to
+  )
+setMessage(to)
+  }
+  const addChange = (e) => {
+  const {value, name} = e.target;
+SetForm({
+    ...Form,
+  [name] : value,
+
+
+   }
+    )
+
+  }
+
+ const remove = () => {
+   removeAll(cartProducts)
+  
+   setOpen(false)
+
+ }
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 400,
+  
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+  };
   
   
   
@@ -62,9 +151,10 @@ else {
       
       
       </div>
+
     {cartProducts.map((cartProduct, i) => {
-   
-      const { id, title, price, Imagen, quantity, category } = cartProduct
+  
+      const { id, title, price, Imagen, quantity} = cartProduct
       
     return( <div key={i} className="Productos3"> 
  
@@ -92,9 +182,49 @@ else {
       <h5>Total compra  </h5>
       <h5>  Productos : {totalQuantity()} </h5>
       <h5> Precio     : $ {totalPrice(cartProducts)}</h5>
-      
-       <Link to = "/" > <button className="Comprar" > Terminar compra </button></Link>
        <Link to = "/Productos" > <button> Sigue comprando </button></Link>
+       <div>
+      <button onClick={handleOpen} className="Comprar">Terminar mi compra </button>
+        
+      <Modal
+        open={open}
+        onClose={addSubmit}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+            <Box sx={style} className="fondoHome">
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Registro de  la compra
+          </Typography>
+     {message ? (
+       <div>
+       <div> Orden enviada</div>   
+     <div> Numero de su orden : </div>
+    <div> {message.id}</div>
+    <Link to="/"><button onClick={remove} className="Comprar"> Cerrar </button></Link>
+    </div>
+     
+     ):(
+     <form onSubmit={addSubmit}>
+          <Typography id="modal-modal-description" >
+        
+<input type="text" name="name" placeholder="Bruce" className="bloquesito" value={Form.name} onChange={addChange} /> 
+<input type="text" name="lastName" placeholder="Wayne"className="bloquesito" value={Form.lastName} onChange={addChange} />
+<input type="number" name="phone" placeholder="xxx-xxx-xx-xx" className="bloquesito" value={Form.phone} onChange={addChange} />
+<input type="text" name="Email" placeholder="Batman@gmail.bat" className="bloquesito" value={Form.Email} onChange={addChange} />
+<input type="text" name="address" placeholder="Callejó del crimen" className="bloquesito" value={Form.address} onChange={addChange} />
+<label >Aceptar terminos y condiciones <input type="Checkbox"  required /></label>
+
+         
+         <button  className="bloquesito Comprar" >Enviar datos</button> 
+          </Typography>
+          </form>)}
+        </Box>
+      </Modal>
+    </div>
+  
+
+      
       
       </div>
       </div>

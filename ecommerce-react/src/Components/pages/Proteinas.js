@@ -15,7 +15,7 @@ export default function  Proteinas  (props)  {
 
     const [loading , setLoading] = useState(true)
 
-    const { category } = useParams()
+    const { id ,category } = useParams()
 
     const [products, setProducts] = useState([])
  
@@ -34,37 +34,46 @@ export default function  Proteinas  (props)  {
        })
 
        return ProducData;
-};
+      }
+       const Sumarize  = (e) => {
+        e.stopPropagation()
+         setContador(contador +1) 
+  
+     document.getElementById("enseñar").remove()
+     document.getElementById("ocultar").style.display = "block"
+  
+     
+     addCartProducts(products)
+ 
+ 
+     }  
+
+      
     
     
 useEffect( () => {
     setProducts([])
     setLoading(true)
-    getCreatinas().then( (productos) => {
+    getCreatinas().then( (products) => {
         setLoading(false)
-        category ? filterProductByCategory(productos, category) : setProducts(productos)
-  console.log (category)  })
-}, [category])
+        id ? filterProductByCategory(products, id) : setProducts(products)
+ })
 
 
-const filterProductByCategory = (array , category) => {
-    return array.map( (product, i) => {
-        if(product.category === category) {
+}, [id])
+
+
+const filterProductByCategory = ( array, id) => {
+    return products.map( (product, i) => {
+        if(product.id === id) {
            return setProducts(products => [...products, product]);
         }
     })
-}
- const Sumarize  = (e) => {
-       e.stopPropagation()
-        setContador(contador +1) 
- 
-    document.getElementById("enseñar").remove()
-    document.getElementById("ocultar").style.display = "block"
-    addCartProducts(products)
+} 
 
-
-    }   
-    
+      
+   
+            
     
     
      return (

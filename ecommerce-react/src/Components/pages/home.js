@@ -20,7 +20,7 @@ return (
                  clientes en el mundo del fitness, debido a que esto es lo que nos mueve, <span>¡ESTA ES NUESTRA PASIÓN!.</span>
               </p>
 
-   <div  className="iframe setentavh" > <iframe   src="https://www.youtube.com/embed/MY_gyv3ZDLE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" >Video de la pagina </iframe> </div>
+   <div className="setentavh"  > <iframe className="iframe "  src="https://www.youtube.com/embed/MY_gyv3ZDLE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" >Video de la pagina </iframe> </div>
 
 
   
