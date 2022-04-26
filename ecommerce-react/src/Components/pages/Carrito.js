@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
 export const   Carrito = () => {  
-  const { cartProducts, removeCartProducts, totalPrice, totalQuantity, removeAll } = useContext(CartContext)
+  const { cartProducts, removeCartProducts, totalPrice, totalQuantity, removeAll, individualPrice } = useContext(CartContext)
   const [open, setOpen] = React.useState(false);
   const [message, setMessage] = useState();
   const[Form, SetForm] = useState({

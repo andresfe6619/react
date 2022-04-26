@@ -6,7 +6,9 @@ const CartContext = createContext();
 
 export function CartProvider  ({children})  {
     const [cartProducts, setCartProducts] = useState([])
-     
+    const [quantity, setQuantity] = useState(0)
+    
+    
     const addCartProducts = (product) => {
    
     let Duplicate = cartProducts.find(cartProduct => cartProduct.id === product.id)
@@ -20,33 +22,50 @@ const  totalPrice = () => {
     let total = 0
 
     cartProducts.forEach( (cartProduct) => {
-       total = cartProduct.price *cartProduct.quantity + total 
+       total = cartProduct.price  + total 
     })
 
     return total
   }
+
+
+const  individualPrice = () => {
+let total = 0
+
+cartProducts.map( (cartProduct) => {
+   total = cartProduct.price * cartProduct.quantity + total 
+
+
+  } )
+  return total
+}
 const  removeAll = () => {
-    let products = []
-    setCartProducts(products)
- return products
+  
+    setCartProducts([])
+ 
 
 }
   
   
   const totalQuantity = () => {
-let total = cartProducts.length
-  
+    let total = 0
+
+    cartProducts.forEach( (cartProduct) => {
+       total = cartProduct.quantity  + total 
+    })
+
     return total
   }
-
 const data = {
         cartProducts,
        addCartProducts,
        removeCartProducts,
        totalPrice,
        totalQuantity,
-       removeAll
- }
+       removeAll,
+       setQuantity,
+       individualPrice
+      }
 
 
   

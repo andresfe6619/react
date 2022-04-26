@@ -1,11 +1,11 @@
-import React, {useState}  from "react"
+import React, {useState, useContext}  from "react"
 import { Link, useNavigate } from 'react-router-dom'
- 
+import CartContext from "../Context/cartContext";
 
 export  const SumarizeRemove =({Stock, Inicial, id, action}) => {
 
     const [count, setCount] = useState(Inicial)
-    
+    const { setQuantity} = useContext(CartContext) 
     
     
  
@@ -21,11 +21,11 @@ export  const SumarizeRemove =({Stock, Inicial, id, action}) => {
  
     }
 
-    const onAdd1 = () =>{
+    const onAdd1 = () => action(count)
         
-        return (JSON.stringify(count))
+        setQuantity(count);
       
-    }   
+      
 
 return(
    <div>
@@ -39,7 +39,7 @@ return(
  <button onClick={Sumarize}>Añadir</button>  
  </div>
  
- <button className="Comprar" onClick={action}>Comprar  </button>
+ <button className="Comprar" onClick={onAdd1}>Comprar  </button>
     </div>
             
     <div id="ocultar">     

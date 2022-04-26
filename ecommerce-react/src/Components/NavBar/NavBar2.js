@@ -23,10 +23,10 @@ return(
             <Link to= '/Productos'className="nav-link active" aria-current="page" href="productos.html">Productos</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="servicios.html">servicios</a>
+          <Link to= '/Servicios'className="nav-link active" aria-current="page" href="productos.html">Servicios</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link " href="envios.html">Envios</a>
+          <Link to= '/Envios'className="nav-link active" aria-current="page" href="productos.html">Envios</Link>
           </li>
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Marcas asociadas</a>

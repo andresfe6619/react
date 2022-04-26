@@ -14,6 +14,9 @@ import {Carrito} from "./Components/pages/Carrito";
 import Categorias from './Components/pages/Categorys';
 import  Proteinas  from './Components/pages/Proteinas';
 import Creatinas from "./Components/pages/Creatinas";
+import {Services} from './Components/pages/Services';
+import {Deliverys} from './Components/pages/Deliverys';
+
 // context
 import { CartProvider } from './Components/Context/cartContext.js';
 
@@ -32,6 +35,8 @@ function App() {
       <Routes>
       <Route path= "/category/:id" element= {<Details />} />
       <Route path='/Productos' element= {<Categorias/>} />
+      <Route path='/Servicios' element= {<Services/>} />
+      <Route path='/Envios' element= {<Deliverys/>} />
       <Route path='*' element= {<Error/>} />
       <Route path ="/Carrito" element= {<Carrito/>} />
       <Route path = "/Proteinas" element= {<Proteinas/>} />

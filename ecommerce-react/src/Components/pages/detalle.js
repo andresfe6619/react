@@ -13,8 +13,8 @@ import RAM from "../../fireBase";
 const Details = () =>{
      const {id} = useParams();
      const [Proteina, setProduct] = useState({});
-     const {cartProducts, addCartProducts} = useContext(CartContext)
-   
+     const {cartProducts, addCartProducts, quantity, individualPrice} = useContext(CartContext)
+     const {cantidad, setCantidad}= useState(1)
 const getProduct = async () => {
 
 const collectionRef = doc(RAM, 'Productos', id)
@@ -39,7 +39,6 @@ if (ProductSnapshot.exists()) {
 
 
 
-
    useEffect (() => {
    getProduct()
  // filterId(wheyProtein, id,)
@@ -54,16 +53,16 @@ if (ProductSnapshot.exists()) {
                
    // }})}
 
-    const [contador, setContador] = useState(0)
-    
-    const Sumarize  = () => {
-        setContador(contador +1) 
-        
+   const [contador, setContador] = useState(0)
+    const [price, setPrice] = useState(0)
+    const Sumarize  = (count) => {
+      setContador(Proteina.quantity = count)
+        setPrice(Proteina.price = Proteina.price* count)
      document.getElementById("enseñar").remove()
      document.getElementById("ocultar").style.display = "block"
      
      addCartProducts(Proteina)
-    
+
     }   
     return (
    
