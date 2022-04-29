@@ -1,10 +1,13 @@
+// React 
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+//Components
+import { Link} from "react-router-dom";
+//Image
 import  Proteinas  from "../../Styles/img/alimentos.jpg";
 
 
 export default function Categorias() {
-const { category } = useParams();
+
     return(
 <div className="setentavh ">
 <h1 className="blancoNegro">Categorias</h1>

@@ -1,17 +1,20 @@
+// React, Hooks, context
 import React,  {useContext, useState} from "react";
-import {Link} from "react-router-dom";
 import CartContext from "../Context/cartContext";
+// Components
+import {Link} from "react-router-dom";
+import { ModalCustom } from "../modal/modal";
+//Firebase
+import RAM from "../../fireBase";
+import {addDoc, collection} from "firebase/firestore";
+//MUI
 import DeleteIcon from '@mui/icons-material/Delete';
 import { grey } from '@mui/material/colors';
 import Divider from '@mui/material/Divider';
-import RAM from "../../fireBase";
-import Box from '@mui/material/Box';
-import {addDoc, collection} from "firebase/firestore";
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+
 
 export const   Carrito = () => {  
-  const { cartProducts, removeCartProducts, totalPrice, totalQuantity, removeAll, individualPrice } = useContext(CartContext)
+  const { cartProducts, removeCartProducts, totalPrice, totalQuantity, removeAll} = useContext(CartContext)
   const [open, setOpen] = React.useState(false);
   const [message, setMessage] = useState();
   const[Form, SetForm] = useState({
@@ -56,18 +59,15 @@ const addSubmit=(e) => {
   } 
     )
 
-    console.log("Orden generada",
-      order
-    )
+   
+    
    push(sending) 
   
   }
 const push= async (sending) => {
 const toFirebase = collection(RAM, 'Peticiones')
     const to =  await addDoc(toFirebase, sending)
-    console.log("Orden generada",
-    to
-  )
+ 
 setMessage(to)
   }
   const addChange = (e) => {
@@ -88,18 +88,7 @@ SetForm({
    setOpen(false)
 
  }
-  const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-  
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-  };
-  
+ 
   
   
   if (cartProducts.length === 0) { return (
@@ -133,7 +122,7 @@ else {
   
 
   return (
-      <div >
+      <div>
       <div className= "bloquesito">
         <h2 className="blancoNegro  "> ¡Tus compras! </h2>
       
@@ -185,18 +174,9 @@ else {
        <Link to = "/Productos" > <button> Sigue comprando </button></Link>
        <div>
       <button onClick={handleOpen} className="Comprar">Terminar mi compra </button>
-        
-      <Modal
-        open={open}
-        onClose={addSubmit}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-            <Box sx={style} className="fondoHome">
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Registro de  la compra
-          </Typography>
-     {message ? (
+<ModalCustom open={open} onClose={addSubmit}>
+  <h2> Registro de la compra </h2>
+  {message ? (
        <div>
        <div> Orden enviada</div>   
      <div> Numero de su orden : </div>
@@ -206,7 +186,7 @@ else {
      
      ):(
      <form onSubmit={addSubmit}>
-          <Typography id="modal-modal-description" >
+       
         
 <input type="text" name="name" placeholder="Bruce" className="bloquesito" value={Form.name} onChange={addChange} required/> 
 <input type="text" name="lastName" placeholder="Wayne"className="bloquesito" value={Form.lastName} onChange={addChange} required/>
@@ -217,18 +197,19 @@ else {
 
          
          <button  className="bloquesito Comprar" >Enviar datos</button> 
-          </Typography>
-          </form>)}
-        </Box>
-      </Modal>
+      </form>  )} 
+</ModalCustom>
+      
+
+
     </div>
   
 
       
       
-      </div>
-      </div>
+      </div> 
+      
+ </div>
  
- 
-    )}}
+    )}} 
 

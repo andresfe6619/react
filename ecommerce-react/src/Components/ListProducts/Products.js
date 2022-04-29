@@ -1,21 +1,24 @@
+//React, hooks, context
 import React, {useState, useEffect, useContext} from "react"; 
-import {SumarizeRemove} from "./itemCount";
-import {Link} from "react-router-dom";
-import { collection, getDocs, doc } from "firebase/firestore";
-import RAM  from "../../fireBase";
 import { useParams } from 'react-router-dom'
-import CartContext from "../Context/cartContext";
+
+//Components
+
+import {Link} from "react-router-dom";
+//Firebase
+import { collection, getDocs } from "firebase/firestore";
+import RAM  from "../../fireBase";
+
+
 
 
 
 export default function  ProductsList  (props)  { 
-    const {cartProducts, addCartProducts, setCategory} = useContext(CartContext)
-    const [contador, setContador] = useState(0)
-  
+
 
     const [loading , setLoading] = useState(true)
 
-    const { id, category } = useParams()
+    const {  category } = useParams()
 
     const [products, setProducts] = useState([])
  
@@ -54,16 +57,7 @@ const filterProductByCategory = (array , category) => {
         }
     })
 }
- const Sumarize  = (e) => {
-       e.stopPropagation()
-        setContador(contador +1) 
  
-    document.getElementById("enseñar").remove()
-    document.getElementById("ocultar").style.display = "block"
-    addCartProducts(products)
-    console.log(addCartProducts)
-
-    }   
     
     
     
@@ -84,19 +78,19 @@ const filterProductByCategory = (array , category) => {
               
               <h2>{Products.title}      </h2>
              
-            <Link to ={ `/category/${Products.id}`} > 
+            
             <img src = {Products.Imagen}   width="400"
   
   height="341"> 
 
 
 
-   </img> </Link>
+   </img> 
               <p>Precio : $ {Products.price}</p>
               <p>Cantidad :  {Products.quantity}</p>
               <p>Cada servicio :{Products.protein}</p>
              <p> Stock :  {Products.Stock}</p>
-              <SumarizeRemove  Stock =  {Products.Stock} Inicial = {Products.initial} id={Products.id} action={Sumarize}  />
+             <Link to ={ `/category/${Products.id}`} >  <button>Ver Producto</button> </Link>
             
           </div>  
       )

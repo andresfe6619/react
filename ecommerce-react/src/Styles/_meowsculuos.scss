@@ -564,6 +564,19 @@ border-radius: 2%;
 
 
  }
+ #icon{
+  position: absolute;
+  display: block;
+  bottom: 8.5rem;
+  right: 9rem;
+  
+  user-select: none;
+  cursor: pointer;
+}
+#contraseñas{
+  display: none;
+  color: #bb2929;
+}
 
 nav {background: black;
 display: flex;

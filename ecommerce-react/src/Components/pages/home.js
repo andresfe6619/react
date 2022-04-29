@@ -1,4 +1,6 @@
+//React
 import React from "react";
+//Image
 import Cat from "../../Styles/img/mewoscles.png"
 
 

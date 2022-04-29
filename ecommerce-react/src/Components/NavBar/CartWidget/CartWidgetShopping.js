@@ -1,16 +1,20 @@
-import React, {useContext, useState, useEffect} from "react"; 
+//React, Hooks, Context
+import React, {useContext, useState} from "react"; 
+import CartContext from '../../Context/cartContext.js';
+//Components
+import {Link} from 'react-router-dom'
+//MUI
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Divider from '@mui/material/Divider';
-import {Link} from 'react-router-dom'
-import CartContext from '../../Context/cartContext.js';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { grey } from '@mui/material/colors';
+
 const  CartWidget = () => {
   const { cartProducts, removeCartProducts } = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
-    const [quantity, setQuantity] = useState(1);
+    
     
     const open = Boolean(anchorEl);
     const handleClick = (event) => {

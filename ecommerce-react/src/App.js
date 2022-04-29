@@ -1,11 +1,11 @@
 
-//estilos
+//Styles
 import './Styles/App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-//componentes
+//Components
 import Navigate1 from "./Components/NavBar/NavBar2";
 import Footer from "./Components/footer/footer";
-// rutas
+// Routes
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Details from "./Components/pages/detalle";
 import {TinyHome} from "./Components/pages/home";

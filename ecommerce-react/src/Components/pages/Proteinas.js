@@ -1,21 +1,26 @@
+//React, Hooks, context
 import React, {useState, useEffect, useContext} from "react"; 
+import CartContext from "../Context/cartContext";
+import { useParams } from 'react-router-dom'
+//Components
 import {SumarizeRemove} from  "../ListProducts/itemCount";
 import {Link} from "react-router-dom";
-import { collection, getDocs, doc, query, where } from "firebase/firestore";
+//Firebase
+import { collection, getDocs,  query, where } from "firebase/firestore";
 import RAM  from "../../fireBase";
-import { useParams } from 'react-router-dom'
-import CartContext from "../Context/cartContext";
+
+
 
 
 
 export default function  Proteinas  (props)  { 
-    const {cartProducts, addCartProducts, setCategory} = useContext(CartContext)
+    const {addCartProducts} = useContext(CartContext)
     const [contador, setContador] = useState(0)
   
 
     const [loading , setLoading] = useState(true)
 
-    const { id ,category } = useParams()
+    const { id  } = useParams()
 
     const [products, setProducts] = useState([])
  
@@ -96,7 +101,7 @@ const filterProductByCategory = ( array, id) => {
             <Link to ={ `/category/${Products.id}`} > 
             <img src = {Products.Imagen}   width="400"
   
-  height="341"> 
+  height="341" alt={Products.title}> 
 
 
 

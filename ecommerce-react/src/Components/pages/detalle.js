@@ -1,20 +1,20 @@
+//React, Hooks, Context
 import React from "react";
-
-import {SumarizeRemove} from "../ListProducts/itemCount"
-//import ProductsList from "../ListProducts/Products"
-import { useParams } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
-//import ListProducts from "../ListProducts/ProductsReady";
-import { getDoc, doc } from "firebase/firestore";
 import CartContext from "../Context/cartContext";
+import { useParams } from "react-router-dom";
+//Components
+import {SumarizeRemove} from "../ListProducts/itemCount"
+//Firebase
+import { getDoc, doc } from "firebase/firestore";
 import RAM from "../../fireBase";
 
 
 const Details = () =>{
      const {id} = useParams();
      const [Proteina, setProduct] = useState({});
-     const {cartProducts, addCartProducts, quantity, individualPrice} = useContext(CartContext)
-     const {cantidad, setCantidad}= useState(1)
+     const {addCartProducts} = useContext(CartContext)
+    
 const getProduct = async () => {
 
 const collectionRef = doc(RAM, 'Productos', id)
@@ -41,17 +41,9 @@ if (ProductSnapshot.exists()) {
 
    useEffect (() => {
    getProduct()
- // filterId(wheyProtein, id,)
+ 
 },[id])
   
-
-
-     //const filterId= (array, id) =>{
-  //return array.map( (product) => {if(product.id === id){return setProduct(product, id)
-        
-     
-               
-   // }})}
 
    const [contador, setContador] = useState(0)
     const [price, setPrice] = useState(0)

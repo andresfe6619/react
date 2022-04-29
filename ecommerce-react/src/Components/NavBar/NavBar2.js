@@ -1,8 +1,15 @@
+// React
+import React from "react";
+//Components
 import CartWidget from "./CartWidget/CartWidgetShopping";
 import { Link }  from 'react-router-dom';
+import { SignIn } from "../modal/modalSignIn";
+import { LogIn } from "../modal/modalLogIn";
+//bootsrap
 import "bootstrap"
 
  function Navigate1 () {
+
 return(
 
 <div className="displayFlex">
@@ -29,7 +36,7 @@ return(
           <Link to= '/Envios'className="nav-link active" aria-current="page" href="productos.html">Envios</Link>
           </li>
           <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Marcas asociadas</a>
+            <a className="nav-link dropdown-toggle"  id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Marcas asociadas</a>
             <ul className="dropdown-menu" aria-labelledby="dropdown03">
               <li><a className="dropdown-item" href="https://www.newbalance.com.co">New Balance</a></li>
               <li><a className="dropdown-item" href="https://www.newbalance.com.co">Adidas</a></li>
@@ -46,9 +53,10 @@ return(
         </form>
       
        
-<section className="botonesDerecha"> 
-<button><a href="iniciar+sesion-.html"> Iniciar sesion </a>  </button> 
-<button><a href="registro.html">  registrarse  </a> </button>
+<section className="botonesDerecha">  
+<SignIn ></SignIn>
+
+ <LogIn></LogIn>
  </section>         
 
       </div>

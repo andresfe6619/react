@@ -1,7 +1,8 @@
+//  React, hooks, context
 import React, {useState, useContext}  from "react"
-import { Link, useNavigate } from 'react-router-dom'
 import CartContext from "../Context/cartContext";
-
+//Components
+import { Link } from 'react-router-dom'
 export  const SumarizeRemove =({Stock, Inicial, id, action}) => {
 
     const [count, setCount] = useState(Inicial)

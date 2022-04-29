@@ -537,6 +537,23 @@ ul li:hover a {
   border-radius: 2%;
 }
 
+#icon {
+  position: absolute;
+  display: block;
+  bottom: 8.5rem;
+  right: 9rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+#contraseñas {
+  display: none;
+  color: #bb2929;
+}
+
 nav {
   background: black;
   display: -webkit-box;
