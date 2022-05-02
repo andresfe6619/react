@@ -2,7 +2,7 @@
 import React from "react";
 import { useState, useEffect, useContext } from "react";
 import CartContext from "../Context/cartContext";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 //Components
 import {SumarizeRemove} from "../ListProducts/itemCount"
 //Firebase
@@ -14,8 +14,12 @@ const Details = () =>{
      const {id} = useParams();
      const [Proteina, setProduct] = useState({});
      const {addCartProducts} = useContext(CartContext)
-    
-const getProduct = async () => {
+     const [to, buy ] = useState(true)
+
+
+
+
+     const getProduct = async () => {
 
 const collectionRef = doc(RAM, 'Productos', id)
 const ProductSnapshot = await getDoc(collectionRef);
@@ -50,8 +54,7 @@ if (ProductSnapshot.exists()) {
     const Sumarize  = (count) => {
       setContador(Proteina.quantity = count)
         setPrice(Proteina.price = Proteina.price* count)
-     document.getElementById("enseñar").remove()
-     document.getElementById("ocultar").style.display = "block"
+    buy(false)
      
      addCartProducts(Proteina)
 
@@ -121,13 +124,19 @@ if (ProductSnapshot.exists()) {
                  <li> {Proteina.advantages1}</li> 
  
                  <li> {Proteina.advantages2}</li>
- 
-                 
- 
- 
+ </ol> 
+     
+     { to ? (           
+
+
      <SumarizeRemove  Stock =  {Proteina.Stock} Inicial = {1} action={Sumarize} />
-                 </ol>   
-               
+                   
+            ):(  
+<>
+      <Link to="/Productos"  className="bloquesito" ><button>Volver</button></Link>        
+      <Link to="/Carrito" className="Comprar"  ><button>Finalizar</button></Link>  
+</>
+          )    }
           
           </section>    
 

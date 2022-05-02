@@ -3,7 +3,6 @@ import React, {useState, useEffect} from "react";
 
 //Components
 import Items  from "../ListProducts/item";
-
 //Firebase
 import { collection, getDocs,  query, where } from "firebase/firestore";
 import RAM  from "../../fireBase";
@@ -12,7 +11,7 @@ import { useParams } from 'react-router-dom'
 
 
 
-export default function  Creatinas  ()  { 
+export default function  PreWorkouts  ()  { 
 
   
 
@@ -25,7 +24,7 @@ export default function  Creatinas  ()  {
     
     
    const getCreatinas = async () => {
-    const collectionRef = query(collection(RAM, 'Productos'), where('category', '==', "creatine"))
+    const collectionRef = query(collection(RAM, 'Productos'), where('category', '==', "Pre"))
     const ProducSnapshot = await getDocs(collectionRef);
        const ProducData = ProducSnapshot.docs.map((doc) => {
        let Product = doc.data();
@@ -85,11 +84,10 @@ const filterProductByCategory = (array , category) => {
                 }
              </>
             ) : (
-               <p> nuestra mascota ha escondido las creatinas, ¡un momento por favor!</p>
+               <p> BCAA en camino</p>
            )
            
           }
         </div>  );
      };
           
-
