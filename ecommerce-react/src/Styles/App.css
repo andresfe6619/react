@@ -154,7 +154,7 @@
   background-color: black;
   border: outset;
   border-radius: 10px;
-  display: inline-block !important;
+  display: inline-block;
   margin: 0px !important;
 }
 
@@ -540,8 +540,8 @@ ul li:hover a {
 #icon {
   position: absolute;
   display: block;
-  bottom: 8.5rem;
-  right: 9rem;
+  bottom: 8.7rem;
+  right: 7rem;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;

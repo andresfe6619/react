@@ -22,9 +22,9 @@ export  const SumarizeRemove =({Stock, Inicial, id, action}) => {
  
     }
 
-    const onAdd1 = () => action(count)
+    const onAdd1 = () => {action(count)
         
-        setQuantity(count);
+        setQuantity(count)};
       
       
 
