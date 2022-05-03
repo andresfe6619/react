@@ -45,7 +45,6 @@ if (ProductSnapshot.exists()) {
 
    useEffect (() => {
    getProduct()
- 
 },[id])
   
 
@@ -134,7 +133,7 @@ if (ProductSnapshot.exists()) {
             ):(  
 <>
       <Link to="/Productos"  className="bloquesito" ><button>Volver</button></Link>        
-      <Link to="/Carrito" className="Comprar"  ><button>Finalizar</button></Link>  
+      <Link to="/Carrito"   ><button>Finalizar</button></Link>  
 </>
           )    }
           

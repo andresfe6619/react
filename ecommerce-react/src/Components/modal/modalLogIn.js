@@ -87,7 +87,7 @@ return (
    <form onSubmit={addSubmit}>
    <input type="text" name="name" placeholder="Bruce Banner" className="bloquesito" value={Form.name} onChange={addChange} required/> 
     <input type="text" name="email" placeholder="HulkAplasta@ElMejorAvenger.com" className="bloquesito" value={Form.email} onChange={addChange} required/> 
-    <input type="date" name="fecha" className="bloquesito" value={Form.date} onChange={addChange} required/> 
+    <input type="date" name="fecha" className="bloquesito" value={Form.date} onChange={addChange} /> 
     <select  name="sexo" className="bloquesito" value={Form.sexo} onChange={addChange} required>
     <option value="Masculino" onChange={addChange}>Masculino</option>
     <option value="Femenino">Femenino</option>

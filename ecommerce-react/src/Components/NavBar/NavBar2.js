@@ -26,14 +26,19 @@ return(
 
       <div className="collapse navbar-collapse" id="navbarsExample03">
         <ul className="navbar-nav me-auto mb-2 mb-sm-0">
+        <li className="nav-item dropdown">
+          <Link to="/Productos"  className="nav-link dropdown-toggle"  id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Productos</Link>
+            <ul className="dropdown-menu" aria-labelledby="dropdown03">
+              <li><Link to="/Proteinas" className="dropdown-item">Proteinas</Link></li>
+              <li><Link to="/Creatinas" className="dropdown-item">Creatinas</Link></li>
+              <li><Link to="/BCAA" className="dropdown-item">BCAAs</Link></li>
+       
+             </ul> </li>
           <li className="nav-item">
-            <Link to= '/Productos'className="nav-link active" aria-current="page" href="productos.html">Productos</Link>
+          <Link to= '/Servicios'className="nav-link active" aria-current="page" >Servicios</Link>
           </li>
           <li className="nav-item">
-          <Link to= '/Servicios'className="nav-link active" aria-current="page" href="productos.html">Servicios</Link>
-          </li>
-          <li className="nav-item">
-          <Link to= '/Envios'className="nav-link active" aria-current="page" href="productos.html">Envios</Link>
+          <Link to= '/Envios'className="nav-link active" aria-current="page" >Envios</Link>
           </li>
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle"  id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Marcas asociadas</a>
