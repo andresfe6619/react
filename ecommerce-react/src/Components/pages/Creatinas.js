@@ -46,7 +46,7 @@ useEffect( () => {
     getCreatinas().then( (productos) => {
         setLoading(false)
         category ? filterProductByCategory(productos, category) : setProducts(productos)
-  console.log (category)  })
+    })
 }, [category])
 
 
