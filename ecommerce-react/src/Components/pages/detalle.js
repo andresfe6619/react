@@ -5,6 +5,7 @@ import CartContext from "../Context/cartContext";
 import { Link, useParams } from "react-router-dom";
 //Components
 import {SumarizeRemove} from "../ListProducts/itemCount"
+
 //Firebase
 import { getDoc, doc } from "firebase/firestore";
 import RAM from "../../fireBase";
@@ -61,11 +62,12 @@ if (ProductSnapshot.exists()) {
     return (
    
 <div className="fondoNegro gridDetails" >
-
+<a href={Proteina.Imagen}>
 <img  src = {Proteina.Imagen}    
      width="500"
      height="500"
-     alt={Proteina.Imagen}/>    
+     alt={Proteina.Imagen}
+     /> </a>
           <section className=''>
                         
   

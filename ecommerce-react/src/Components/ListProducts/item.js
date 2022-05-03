@@ -22,14 +22,14 @@ import {Link} from "react-router-dom";
          
         <h2>{title}      </h2>
        
-      <Link to ={ `/category/${id}`} > 
+      <a href={Imagen} > 
       <img src = {Imagen}   width="400"
 
 height="341" alt={title}> 
 
 
 
-</img> </Link>
+</img> </a>
         <p>Precio : $ {price}</p>
         <p>Cantidad :  {quantity}</p>
         <p>Cada servicio :{protein}</p>
