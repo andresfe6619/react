@@ -13,7 +13,7 @@ import RAM  from "../../fireBase";
 
 
 
-export default function  ProductsList  (props)  { 
+export default function  ProductsList  ()  { 
 
 
     const [loading , setLoading] = useState(true)
