@@ -30,9 +30,9 @@ if (ProductSnapshot.exists()) {
   let Product = ProductSnapshot.data();
   Product.id= ProductSnapshot.id;
   setProduct(Product);
-  console.log("Document data:", ProductSnapshot.data());
+  
 }else{
-  console.log("No such document!");
+  
 
 } 
 

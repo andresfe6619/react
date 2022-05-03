@@ -33,18 +33,14 @@ export const   SignIn = () => {
     }
       
   
-      console.log("Orden generada",
-        Form
-      )
+  
      push(sending) 
     
     }
   const push= async (sending) => {
   const toFirebase = collection(RAM, 'Sesiones')
       const to =  await addDoc(toFirebase, sending)
-      console.log("Orden generada",
-      to
-    )
+ 
   setMessage(to)
     }
     const addChange = (e) => {

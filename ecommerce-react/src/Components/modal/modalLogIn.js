@@ -32,18 +32,14 @@ export const   LogIn = () => {
    
       
   
-      console.log("Orden generada",
-        Form
-      )
+     
      push(sending) 
     
     }
   const push= async (sending) => {
   if (Form.password === Form.password2){const toFirebase = collection(RAM, 'Registros')
       const to =  await addDoc(toFirebase, sending)
-      console.log("Orden generada",
-      to
-    )
+  
   setMessage(to)
     }else{
         document.getElementById("contraseñas").style.display = "block"

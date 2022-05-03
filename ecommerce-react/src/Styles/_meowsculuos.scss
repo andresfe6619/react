@@ -571,10 +571,11 @@ border-radius: 2%;
  #icon{
   position: absolute;
   display: block;
-  bottom: 8.7rem;
-  right: 7rem;
-  
-  user-select: none;
+ 
+  bottom: none;
+    
+  right : none;
+    user-select: none;
   cursor: pointer;
 }
 #contraseñas{
@@ -773,7 +774,12 @@ font-weight: 750;
 width: auto;
 
 }
+#icon{
 
+  bottom: 21vh;
+  right: 15vh;
+
+}
 
 .botonBurger{
 
@@ -887,4 +893,9 @@ transform: scale(1.05);
     object-position: center !important;
  
   }
+  #icon{
 
+    bottom: 21vh;
+    right: 9vh;
+  
+  }

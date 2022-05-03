@@ -540,8 +540,8 @@ ul li:hover a {
 #icon {
   position: absolute;
   display: block;
-  bottom: 8.7rem;
-  right: 7rem;
+  bottom: none;
+  right: none;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -757,6 +757,10 @@ iframe {
     font-weight: 750;
     width: auto;
   }
+  #icon {
+    bottom: 21vh;
+    right: 15vh;
+  }
   .botonBurger {
     position: fixed;
     top: 0;
@@ -839,5 +843,10 @@ iframe {
 .centroImagen {
   -o-object-position: center !important;
      object-position: center !important;
+}
+
+#icon {
+  bottom: 21vh;
+  right: 9vh;
 }
 /*# sourceMappingURL=App.css.map */
